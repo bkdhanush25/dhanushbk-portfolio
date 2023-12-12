@@ -3,7 +3,11 @@ import React from 'react'
 function page() {
   return (
     <div>
-      Home
+      {/* Hello and intro section */}
+      <div>
+        <button>Hello!</button>
+        <h2>I</h2>
+      </div>
     </div>
   )
 }

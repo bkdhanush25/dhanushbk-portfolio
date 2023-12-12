@@ -6,8 +6,9 @@ import { motion as m } from "framer-motion";
 const Footer = () => {
   return (
     <div className="block rounded-tl-3xl rounded-tr-3xl bg-light-black text-white px-20 max-sm:px-10 py-6">
+      {/* Let's connect there and hire me button */}
       <div className="flex items-center justify-between flex-wrap gap-3">
-        <h4 className="text-5xl max-sm:text-4xl">Lets Connect there</h4>
+        <h4 className="text-5xl max-sm:text-4xl">Let&apos;s Connect there</h4>
         <div>
           <m.button className="rounded-full bg-primary-color py-1 px-4 text-2xl flex items-center font-medium" whileHover={{scale: 1.1}}>
             <p>Hire me </p>
@@ -37,7 +38,9 @@ const Footer = () => {
         </div>
       </div>
       <hr className="my-14" />
+      {/* 4 div flex section */}
       <div className="md:grid lg:grid-cols-5 max-lg:grid-cols-3 justify-items-center gap-2">
+        {/* BK Dhanush section */}
         <div className="col-span-2">
           <Link href="/">
           <m.div className="flex items-center gap-1 cursor-pointer mb-8" whileHover={{scale:1.1,x:15}}>
@@ -126,6 +129,7 @@ const Footer = () => {
             </m.svg>
           </div>
         </div>
+        {/* Navigation section */}
         <div className="text-xl flex flex-col">
           <h5 className="text-primary-color font-semibold mb-7">Navigation</h5>
           <m.div whileHover={{scale: 1.1}} className="mb-5">
@@ -146,6 +150,7 @@ const Footer = () => {
             Project
           </Link></m.div>
         </div>
+        {/* Contact section */}
         <div className="text-xl flex flex-col">
           <h5 className="text-primary-color font-semibold mb-7">Contact</h5>
           <p className="mb-7">+91 6374151627</p>
@@ -155,6 +160,7 @@ const Footer = () => {
           </Link>
           <p className="mb-7">bkdhanushofficial@gmail.com</p>
         </div>
+        {/* Get the latest information section */}
         <div className="text-xl flex flex-col">
           <h5 className="text-primary-color font-semibold mb-7">
             Get the latest information
@@ -179,6 +185,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className="my-14" />
+      {/* copyright and use terms section */}
       <div className="flex justify-between">
         <p className="text-xl">Copyright© 2023 Jayesh. All Rights Reserved.</p>
         <p className="text-xl">User Terms & Conditions | Privacy Policy</p>
