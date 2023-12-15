@@ -1,28 +1,66 @@
 "use client";
 import React, { useState } from "react";
-import { motion as m } from "framer-motion";
+import { motion as m, AnimatePresence } from "framer-motion";
 import Profile1 from "../public/profile1.png";
 import HalfCircle from "../public/primary-half-circle.png";
+import SpringTransition from "../public/spring-transition.png";
 import Image from "next/image";
 
 function page() {
-  const [hoverProfile1, setHoverProfile1] = useState(0);
+  const [hoverProfile1, setHoverProfile1] = useState<Boolean>(false);
+  const [hoverHiremeButton, setHoverHiremeButton] = useState<Boolean>(false);
+
   return (
     <div>
       {/* Hello and intro section */}
-      <div className="text-light-black flex flex-col justify-center text-center mt-10">
-        <div>
-          <button className="border hover:border-2 hover:font-semibold border-light-black rounded-full px-6 py-1.5 text-xl font-medium">
-            Hello!
-          </button>
-        </div>
-        <h2 className="text-7xl font-semibold mt-2 -z-20">
-          I&apos;m <span className="text-primary-color">Dhanush</span>,<br />
-          Web Developer<span className="text-primary-color">.</span>
-        </h2>
+      <div className="relative py-[120px] flex justify-center">
+        <AnimatePresence>
+          {!hoverProfile1 && (
+            <m.div
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{
+                opacity: 0,
+                y: 200,
+                transition: {
+                  type: "spring",
+                  delay: 0.2,
+                  stiffness: 260,
+                  damping: 20,
+                },
+              }}
+              transition={{
+                type: "spring",
+                duration: 0,
+                stiffness: 260,
+                damping: 20,
+              }}
+              className="absolute top-[10px] text-light-black flex flex-col justify-center text-center mt-10 -z-20"
+            >
+              <div>
+                <button className="border hover:border-2 hover:font-semibold border-light-black rounded-full px-6 py-1.5 text-xl font-medium">
+                  Hello!
+                </button>
+              </div>
+              <h2 className="text-7xl font-semibold mt-2 -z-20">
+                I&apos;m <span className="text-primary-color">Dhanush</span>,
+                <br />
+                Web Developer<span className="text-primary-color">.</span>
+              </h2>
+            </m.div>
+          )}
+        </AnimatePresence>
       </div>
       {/* Testimonials and rating section */}
-      <div className="flex justify-between mx-32 mt-14">
+      <div><AnimatePresence>
+      <m.div animate={hoverProfile1 && {y:-200} || !hoverProfile1 && {y: 0}}
+      transition={{
+        type: "spring",
+        delay: 0.2,
+        stiffness: 260,
+        damping: 20,
+      }}
+      className="flex justify-between mx-40 mt-14">
         {/* Testimonials section */}
         <div>
           <svg
@@ -116,14 +154,10 @@ function page() {
           <p className="text-5xl font-bold">10 Years</p>
           <p className="text-xl font-medium ml-auto">Experience</p>
         </div>
-      </div>
+      </m.div></AnimatePresence></div>
       {/* Image */}
-      <div
-        className="relative"
-        
-      >
-        <div className="absolute bottom-[-240px] left-[26%] -z-10"
-       >
+      <div className="relative flex justify-center">
+        <div className="absolute bottom-[-240px] -z-10">
           <Image
             className=""
             src={Profile1}
@@ -132,7 +166,7 @@ function page() {
             alt="profile1"
           />
         </div>
-        <div className="absolute bottom-[-240px] left-[26%] -z-20">
+        <div className="absolute bottom-[-240px] -z-30">
           <Image
             className=""
             src={HalfCircle}
@@ -141,27 +175,52 @@ function page() {
             alt="Half circle"
           />
         </div>
+        <AnimatePresence>
+          {hoverProfile1 && (
+            <m.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0 }}
+              transition={{
+                type: "spring",
+                delay: 0.2,
+                stiffness: 260,
+                damping: 20,
+              }}
+              className="absolute top-[-210px] -z-20"
+            >
+              <Image
+                className=""
+                src={SpringTransition}
+                width={700}
+                height={100}
+                alt="Half circle"
+              />
+            </m.div>
+          )}
+        </AnimatePresence>
       </div>
       {/* Portfolio & Hire me button */}
-      <div className="flex pt-40 pb-7 lg:mx-96"
-       onMouseEnter={() => {
-        setHoverProfile1(1);
-        console.log(hoverProfile1);
-      }}
-      onMouseLeave={() => {
-        setHoverProfile1(0);
-        console.log(hoverProfile1);
-      }}>
+      <div
+        className="flex pt-40 pb-7 lg:mx-96"
+        onMouseOver={() => {
+          setHoverProfile1(true);
+        }}
+        onMouseOut={() => {
+          setHoverProfile1(false);
+        }}
+      >
         {/* Portfolio button */}
-        <div className="border border-white rounded-full backdrop-blur-md bg-primary-color mx-auto flex">
-          <button className="flex">
+        <div className="border border-white rounded-full backdrop-blur-md text-white mx-auto p-1 flex gap-2">
+          <button className={`flex rounded-full items-center px-3 ${hoverHiremeButton ? "" : "bg-primary-color ease-in-out duration-100"}`}>
             Portfolio
-            <svg
+            { !hoverHiremeButton && <svg
               width="42"
               height="42"
               viewBox="0 0 42 42"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="w-7"
             >
               <path
                 d="M12.25 29.75L29.75 12.25"
@@ -177,17 +236,25 @@ function page() {
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
-            </svg>
+            </svg>}
           </button>
           {/* Hire me button */}
-          <button className="flex">
+          <button className={`flex rounded-full items-center px-3 ${hoverHiremeButton ? "bg-primary-color ease-in-out duration-75" : ""}`}
+          onMouseOver={() => {
+            setHoverHiremeButton(true);
+          }}
+          onMouseOut={() => {
+            setHoverHiremeButton(false);
+          }}>
             Hire me
+            {hoverHiremeButton &&
             <svg
               width="42"
               height="42"
               viewBox="0 0 42 42"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="w-7"
             >
               <path
                 d="M12.25 29.75L29.75 12.25"
@@ -203,11 +270,17 @@ function page() {
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
-            </svg>
+            </svg>}
           </button>
         </div>
       </div>
-      <div className="block bg-black">dsjfkbsjb</div>
+      {/* My services section */}
+      <div className="block bg-blackbg-gif py-28 px-16 bg-cover bg-no-repeat bg-center rounded-[50px] text-white">
+        <div className="flex justify-between items-center">
+          <h3 className="text-5xl font-medium">My <span className="text-primary-color">Services</span></h3>
+          <p className="text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis<br/> lacus nunc, posuere in justo vulputate, bibendum sodales </p>
+        </div>
+      </div>
     </div>
   );
 }
