@@ -17,7 +17,8 @@ const config: Config = {
       colors:{
         'light-black': '#171717',
         'hover-black': '#2b2b2b',
-        'primary-color': '#FD853A'
+        'primary-color': '#FD853A',
+        'primary-gray': '#98A1B2'
       },
     },
   },
