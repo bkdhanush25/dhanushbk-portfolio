@@ -323,7 +323,7 @@ function Page() {
         </h3>
         <div className="flex justify-evenly">
           {/* Company's section */}
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-20">
             <div>
               <h4 className="text-4xl text-light-black font-semibold">
                 Cognizant, Mumbai
@@ -348,16 +348,22 @@ function Page() {
             </div>
           </div>
           {/* Road diagram section */}
-          <div className="flex flex-col">
+          <div className="flex flex-col justify-items-center ">
             <div className="rounded-full p-1.5 border-2 border-light-black border-dashed">
               <div className="bg-primary-color w-9 h-9 rounded-full">
                 <p className="invisible">.</p>
               </div>
             </div>
+            <div className="h-28 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
+              <p className="invisible">.</p>
+            </div>
             <div className="rounded-full p-1.5 border-2 border-light-black border-dashed">
               <div className="bg-light-black w-9 h-9 rounded-full">
                 <p className="invisible">.</p>
               </div>
+            </div>
+            <div className="h-28 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
+              <p className="invisible">.</p>
             </div>
             <div className="rounded-full p-1.5 border-2 border-light-black border-dashed">
               <div className="bg-primary-color w-9 h-9 rounded-full">
@@ -366,7 +372,7 @@ function Page() {
             </div>
           </div>
           {/* Role's section */}
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-8">
             <div>
               <h4 className="text-4xl text-light-black font-semibold">
                 Experince Designer
@@ -395,6 +401,30 @@ function Page() {
             </div>
           </div>
         </div>
+      </div>
+      {/* Why hire me? section */}
+      <div className="py-28 px-16 bg-gray-100 rounded-[50px] flex">
+        {/* Profile photo section */}
+        <div></div>
+        {/* Why hire me text section */}
+        <div className="flex flex-col gap-12 text-light-black">
+          <h4 className="text-6xl font-semibold">Why <span className="text-primary-color">Hire me</span>?</h4>
+          <p className="text-primary-gray text-xl">Lorem ipsum dolor sit amet, consectetur<br/> adipiscing elit. Duis lacus nunc, posuere in justo<br/> vulputate, bibendum sodales </p>
+          <div className="flex justify-between">
+              <div className="flex flex-col gap-2.5">
+                <h5 className="text-4xl font-medium">450+</h5>
+                <p className="text-gray-500 text-xl">Project Completed</p>
+              </div>
+              <div className="flex flex-col gap-2.5">
+                <h5 className="text-4xl font-medium">450+</h5>
+                <p className="text-gray-500 text-xl">Project Completed</p>
+              </div>
+          </div>
+          <div className="mx-auto">
+          <button className="px-14 py-8 border rounded-[32px] border-light-black inline-block text-2xl font-semibold">Hire me</button>
+          </div>
+        </div>
+
       </div>
     </div>
   );
