@@ -14,7 +14,8 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
           'blackbg-gif': "url('https://i.pinimg.com/originals/80/f4/b4/80f4b4c09340c2e7c46ca4254a14d9ff.gif')",
-          'product-image1': "url('https://w3layouts.com/wp-content/uploads/2021/12/Shoppy-Kart-Website-Template-eCommerce-scaled.jpg')"
+          'product-image1': "url('https://w3layouts.com/wp-content/uploads/2021/12/Shoppy-Kart-Website-Template-eCommerce-scaled.jpg')",
+          'black-primary-bg': "url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D')"
       },
       colors:{
         'light-black': '#171717',
