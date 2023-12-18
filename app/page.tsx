@@ -2,13 +2,19 @@
 import React, { useState } from "react";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Profile1 from "../public/profile1.png";
+import Profile2 from "../public/profile2.png";
+import TransitionRing from "../public/transition-ring.png";
 import HalfCircle from "../public/primary-half-circle.png";
 import SpringTransition from "../public/spring-transition.png";
 import Image from "next/image";
+import CountUp from 'react-countup';
+import { Carousel } from 'flowbite-react';
 
 function Page() {
   const [hoverProfile1, setHoverProfile1] = useState<Boolean>(false);
   const [hoverHiremeButton, setHoverHiremeButton] = useState<Boolean>(false);
+  const [hoverProfile2, setHoverProfile2] = useState<Boolean>(false);
+  const [hoverProjectCard, setHoverProjectCard] = useState<Number>(0);
 
   return (
     <div>
@@ -64,7 +70,7 @@ function Page() {
               stiffness: 260,
               damping: 20,
             }}
-            className="flex justify-between mx-40 mt-14"
+            className="flex justify-between mx-20 mt-14"
           >
             {/* Testimonials section */}
             <div>
@@ -297,7 +303,7 @@ function Page() {
         </div>
       </div>
       {/* My services section */}
-      <div className="block bg-blackbg-gif py-28 px-16 bg-cover bg-no-repeat bg-center rounded-[50px] text-white">
+      <div className="block bg-blackbg-gif py-28 px-20 bg-cover bg-no-repeat bg-center rounded-[50px] text-white">
         {/* Heading My services section */}
         <div className="flex justify-between items-center">
           <h3 className="text-5xl font-medium">
@@ -321,7 +327,7 @@ function Page() {
         <h3 className="text-6xl text-light-black font-medium text-center my-20">
           My <span className="text-primary-color">Work Experience</span>
         </h3>
-        <div className="flex justify-evenly">
+        <div className="flex justify-between mx-20">
           {/* Company's section */}
           <div className="flex flex-col gap-20">
             <div>
@@ -403,29 +409,177 @@ function Page() {
         </div>
       </div>
       {/* Why hire me? section */}
-      <div className="py-28 px-16 bg-gray-100 rounded-[50px] flex">
+      <div className="py-28 px-20 bg-gray-100 rounded-[50px] flex justify-center gap-20">
         {/* Profile photo section */}
-        <div></div>
+        <div className="relative flex">
+          <AnimatePresence>
+            {hoverProfile2 && (
+              <m.div
+                className="absolute top-0 z-10"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                }}
+              >
+                <Image
+                  src={TransitionRing}
+                  width={500}
+                  height={500}
+                  alt="profile2"
+                />
+              </m.div>
+            )}
+          </AnimatePresence>
+          <m.div className="cursor-pointer z-20" whileHover={{ y: 10 }}>
+            <Image
+              src={Profile2}
+              width={500}
+              height={500}
+              alt="profile2"
+              onMouseOver={() => {
+                setHoverProfile2(true);
+              }}
+              onMouseOut={() => {
+                setHoverProfile2(false);
+              }}
+            />
+          </m.div>
+        </div>
         {/* Why hire me text section */}
         <div className="flex flex-col gap-12 text-light-black">
-          <h4 className="text-6xl font-semibold">Why <span className="text-primary-color">Hire me</span>?</h4>
-          <p className="text-primary-gray text-xl">Lorem ipsum dolor sit amet, consectetur<br/> adipiscing elit. Duis lacus nunc, posuere in justo<br/> vulputate, bibendum sodales </p>
+          <h4 className="text-6xl font-semibold">
+            Why <span className="text-primary-color">Hire me</span>?
+          </h4>
+          <p className="text-primary-gray text-xl">
+            Lorem ipsum dolor sit amet, consectetur
+            <br /> adipiscing elit. Duis lacus nunc, posuere in justo
+            <br /> vulputate, bibendum sodales{" "}
+          </p>
           <div className="flex justify-between">
-              <div className="flex flex-col gap-2.5">
-                <h5 className="text-4xl font-medium">450+</h5>
-                <p className="text-gray-500 text-xl">Project Completed</p>
-              </div>
-              <div className="flex flex-col gap-2.5">
-                <h5 className="text-4xl font-medium">450+</h5>
-                <p className="text-gray-500 text-xl">Project Completed</p>
-              </div>
+            <div className="flex flex-col gap-2.5">
+              <h5 className="text-4xl font-medium flex">
+                <CountUp start={0} end={450} duration={4}/>+
+              </h5>
+              <p className="text-gray-500 text-xl">Project Completed</p>
+            </div>
+            <div className="flex flex-col gap-2.5">
+              <h5 className="text-4xl font-medium flex">
+                <CountUp start={0} end={450} duration={4}/>+
+              </h5>
+              <p className="text-gray-500 text-xl">Project Completed</p>
+            </div>
           </div>
           <div className="mx-auto">
-          <button className="px-14 py-8 border rounded-[32px] border-light-black inline-block text-2xl font-semibold">Hire me</button>
+            <button className="px-14 py-8 border rounded-[32px] border-light-black inline-block text-2xl font-semibold hover:text-white hover:bg-light-black duration-200">
+              Hire me
+            </button>
           </div>
         </div>
-
       </div>
+      {/* Lets have a look at my Projects */}
+      <div className="px-20 py-24">
+        {/* Heading Projects section */}
+        <div className="flex justify-between items-center">
+          <h4 className="text-slate-black text-6xl font-semibold">
+            Lets have a look at
+            <br />
+            my <span className="text-primary-color">Projects</span>
+          </h4>
+          <div className="items-center">
+            <button className="text-white text-xl font-bold px-10 py-5 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
+              See All
+            </button>
+          </div>
+        </div>
+        {/* Carousel Section */}
+        <div className="flex justify-around pt-12">
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(1);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 1
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 1 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{ duration: 0.2, transition:{duration:0.1} }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(2);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 2
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 2 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100, transition:{duration:0.1} }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+      <Carousel slideInterval={5000}>
+        <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
+        <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
+        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
+        <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
+        <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+      </Carousel>
+    </div>
     </div>
   );
 }

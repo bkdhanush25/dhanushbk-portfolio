@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.vertical-boxshadow{
+    background-color: black;
+    box-shadow: -14px -155px 41px -47px rgba(0,0,0,0.55) inset;
+}

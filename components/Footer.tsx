@@ -5,7 +5,7 @@ import { motion as m } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="block rounded-tl-3xl rounded-tr-3xl bg-light-black text-white px-20 max-sm:px-10 py-6">
+    <div className="block rounded-tl-3xl rounded-tr-3xl bg-light-black text-white px-20 max-sm:px-10 pt-10 pb-6">
       {/* Let's connect there and hire me button */}
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h4 className="text-5xl max-sm:text-4xl">Let&apos;s Connect there</h4>
