@@ -9,7 +9,27 @@ import SpringTransition from "../public/spring-transition.png";
 import TestimonialProfile from "../public/testimonial-profile.png";
 import Image from "next/image";
 import CountUp from "react-countup";
-import { Carousel } from "flowbite-react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 1,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 function Page() {
   const [hoverProfile1, setHoverProfile1] = useState<Boolean>(false);
@@ -497,7 +517,7 @@ function Page() {
           </div>
         </div>
         {/* Carousel Section */}
-        <div className="flex justify-around pt-12">
+        {/* <div className="flex justify-around pt-12">
           <div
             className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
@@ -573,7 +593,377 @@ function Page() {
               </AnimatePresence>
             </div>
           </div>
-        </div>
+        </div> */}
+        <Carousel
+          swipeable={true}
+          draggable={true}
+          showDots={true}
+          responsive={responsive}
+          ssr={true}
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={3000}
+          keyBoardControl={true}
+          // customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px mb-10"
+          className="mb-10 pl-20 py-12"
+        >
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(1);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 1
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 1 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(2);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 2
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 2 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(3);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 3
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 3 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(4);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 4
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 4 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(5);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 5
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 5 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(6);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 6
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 6 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(7);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 7
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 7 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(8);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 8
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 8 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          <div
+            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(9);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 9
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <AnimatePresence>
+                {hoverProjectCard == 9 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Sed lobortis orci
+                      elementum egestas lobortis.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </Carousel>
       </div>
       {/* Testimonial section */}
       <div className="py-28 bg-cover bg-no-repeat bg-center bg-black-primary-bg text-white rounded-[50px]">
@@ -595,7 +985,24 @@ function Page() {
           </p>
         </div>
         {/* Carousel section */}
-        <div className="flex pt-24">
+        <div className="flex pt-24 mx-20">
+        <Carousel
+          swipeable={true}
+          draggable={true}
+          showDots={false}
+          responsive={responsive}
+          ssr={true}
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={3000}
+          keyBoardControl={true}
+          // customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={[ "desktop", "tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
           <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
             {/* Heading section */}
             <div className="flex items-center justify-between">
@@ -700,17 +1107,493 @@ function Page() {
             </div>
             <p className="text-xl">
               consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem
-              <br />
-              ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis
-              orci elementum
-              <br />
-              egestas lobortis.Sed lobortis orci elementum egestas lobortis.Sed
-              lobortis orci
-              <br />
-              elementum egestas lobortis.
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis.
             </p>
           </div>
+          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+            {/* Heading section */}
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <div>
+                    <Image
+                      className=""
+                      src={TestimonialProfile}
+                      width={50}
+                      height={50}
+                      alt="testimonial profile"
+                    />
+                  </div>
+                  <div className="">
+                    <p className="text-2xl font-bold">Jayesh Patil</p>
+                    <p className="text-lg">CEO, Lirante</p>
+                  </div>
+                </div>
+                <div className="flex gap-1">
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <p className="text-[25.69px] font-medium">5.0</p>
+                </div>
+              </div>
+              <svg
+                width="128"
+                height="129"
+                viewBox="0 0 128 129"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                  fill="#667085"
+                  fill-opacity="0.3"
+                />
+                <path
+                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                  fill="#667085"
+                  fill-opacity="0.3"
+                />
+              </svg>
+            </div>
+            <p className="text-xl">
+              consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis.
+            </p>
+          </div>
+          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+            {/* Heading section */}
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <div>
+                    <Image
+                      className=""
+                      src={TestimonialProfile}
+                      width={50}
+                      height={50}
+                      alt="testimonial profile"
+                    />
+                  </div>
+                  <div className="">
+                    <p className="text-2xl font-bold">Jayesh Patil</p>
+                    <p className="text-lg">CEO, Lirante</p>
+                  </div>
+                </div>
+                <div className="flex gap-1">
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <p className="text-[25.69px] font-medium">5.0</p>
+                </div>
+              </div>
+              <svg
+                width="128"
+                height="129"
+                viewBox="0 0 128 129"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                  fill="#667085"
+                  fill-opacity="0.3"
+                />
+                <path
+                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                  fill="#667085"
+                  fill-opacity="0.3"
+                />
+              </svg>
+            </div>
+            <p className="text-xl">
+              consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis.
+            </p>
+          </div>
+          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+            {/* Heading section */}
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <div>
+                    <Image
+                      className=""
+                      src={TestimonialProfile}
+                      width={50}
+                      height={50}
+                      alt="testimonial profile"
+                    />
+                  </div>
+                  <div className="">
+                    <p className="text-2xl font-bold">Jayesh Patil</p>
+                    <p className="text-lg">CEO, Lirante</p>
+                  </div>
+                </div>
+                <div className="flex gap-1">
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <p className="text-[25.69px] font-medium">5.0</p>
+                </div>
+              </div>
+              <svg
+                width="128"
+                height="129"
+                viewBox="0 0 128 129"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                  fill="#667085"
+                  fill-opacity="0.3"
+                />
+                <path
+                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                  fill="#667085"
+                  fill-opacity="0.3"
+                />
+              </svg>
+            </div>
+            <p className="text-xl">
+              consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis.
+            </p>
+          </div>
+          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+            {/* Heading section */}
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <div>
+                    <Image
+                      className=""
+                      src={TestimonialProfile}
+                      width={50}
+                      height={50}
+                      alt="testimonial profile"
+                    />
+                  </div>
+                  <div className="">
+                    <p className="text-2xl font-bold">Jayesh Patil</p>
+                    <p className="text-lg">CEO, Lirante</p>
+                  </div>
+                </div>
+                <div className="flex gap-1">
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <svg
+                    width="32"
+                    height="33"
+                    viewBox="0 0 32 33"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                      fill="#FD853A"
+                    />
+                  </svg>
+                  <p className="text-[25.69px] font-medium">5.0</p>
+                </div>
+              </div>
+              <svg
+                width="128"
+                height="129"
+                viewBox="0 0 128 129"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                  fill="#667085"
+                  fill-opacity="0.3"
+                />
+                <path
+                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                  fill="#667085"
+                  fill-opacity="0.3"
+                />
+              </svg>
+            </div>
+            <p className="text-xl">
+              consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
+              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+              orci elementum egestas lobortis.Sed lobortis orci elementum
+              egestas lobortis.
+            </p>
+          </div>
+          </Carousel>
         </div>
       </div>
       {/* Mail us section */}
