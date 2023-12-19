@@ -5,12 +5,12 @@ import { motion as m } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="block rounded-tl-3xl rounded-tr-3xl bg-light-black text-white px-20 max-sm:px-10 pt-10 pb-6">
+    <div className="block rounded-tl-3xl rounded-tr-3xl bg-light-black text-white lg:px-20 md:px-10 px-5 pt-10 pb-6">
       {/* Let's connect there and hire me button */}
-      <div className="flex items-center justify-between flex-wrap gap-3">
-        <h4 className="text-5xl max-sm:text-4xl">Let&apos;s Connect there</h4>
+      <div className="flex items-center justify-between flex-wrap lg:gap-3 gap-1">
+        <h4 className="text-5xl max-sm:text-2xl">Let&apos;s Connect there</h4>
         <div>
-          <m.button className="rounded-full bg-primary-color py-1 px-4 text-2xl flex items-center font-medium" whileHover={{scale: 1.1}}>
+          <m.button className="rounded-full bg-primary-color py-1 px-4 max-sm:px-2 max-sm:py-0.5 text-2xl max-sm:text-xl flex items-center font-medium" whileHover={{scale: 1.1}}>
             <p>Hire me </p>
             <svg
               width="40"
@@ -37,13 +37,13 @@ const Footer = () => {
           </m.button>
         </div>
       </div>
-      <hr className="my-14" />
+      <hr className="lg:my-14 my-7" />
       {/* 4 div flex section */}
       <div className="md:grid lg:grid-cols-5 max-lg:grid-cols-3 justify-items-center gap-2">
         {/* BK Dhanush section */}
         <div className="col-span-2">
           <Link href="/">
-          <m.div className="flex items-center gap-1 cursor-pointer mb-8" whileHover={{scale:1.1,x:15}}>
+          <m.div className="flex items-center gap-1 cursor-pointer mb-8 max-sm:mb-2" whileHover={{scale:1.1,x:15}}>
             <h2 className="bg-primary-color px-2.5 py-2.5 rounded-full font-bold text-3xl">
               BK
             </h2>
@@ -51,7 +51,7 @@ const Footer = () => {
           </m.div>
           </Link>
 
-          <p className="text-xl">
+          <p className="text-xl max-sm:text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
             interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed lobortis orci elementum egestas lobortis.
@@ -184,11 +184,11 @@ const Footer = () => {
           </m.div>
         </div>
       </div>
-      <hr className="my-14" />
+      <hr className="lg:my-14 my-7" />
       {/* copyright and use terms section */}
       <div className="flex justify-between">
-        <p className="text-xl">Copyright© 2023 Jayesh. All Rights Reserved.</p>
-        <p className="text-xl">User Terms & Conditions | Privacy Policy</p>
+        <p className="lg:text-xl md:text-sm text-xs">Copyright© 2023 Jayesh. All Rights Reserved.</p>
+        <p className="lg:text-xl md:text-sm text-xs">User Terms & Conditions | Privacy Policy</p>
       </div>
     </div>
   );

@@ -13,13 +13,31 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 1,
+    items: 4,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
+    items: 2,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
     items: 1,
+  },
+};
+
+const testimonialResponsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 3,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 2,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -40,7 +58,7 @@ function Page() {
   return (
     <div>
       {/* Hello and intro section */}
-      <div className="relative py-[120px] flex justify-center">
+      <div className="relative py-[120px] max-sm:py-[90px] flex justify-center">
         <AnimatePresence>
           {!hoverProfile1 && (
             <m.div
@@ -62,14 +80,14 @@ function Page() {
                 stiffness: 260,
                 damping: 20,
               }}
-              className="absolute top-[10px] text-light-black flex flex-col justify-center text-center mt-10 -z-20"
+              className="absolute top-[10px] text-light-black flex flex-col justify-center text-center mt-10 max-sm:mt-2 -z-20"
             >
               <div>
                 <button className="border hover:border-2 hover:font-semibold border-light-black rounded-full px-6 py-1.5 text-xl font-medium">
                   Hello!
                 </button>
               </div>
-              <h2 className="text-7xl font-semibold mt-2 -z-20">
+              <h2 className="text-7xl max-sm:text-[42px] font-semibold mt-2 -z-20">
                 I&apos;m <span className="text-primary-color">Dhanush</span>,
                 <br />
                 Web Developer<span className="text-primary-color">.</span>
@@ -83,7 +101,7 @@ function Page() {
         <AnimatePresence>
           <m.div
             animate={
-              (hoverProfile1 && { y: -200 }) || (!hoverProfile1 && { y: 0 })
+              (hoverProfile1 && { y: -180 }) || (!hoverProfile1 && { y: 0 })
             }
             transition={{
               type: "spring",
@@ -91,10 +109,10 @@ function Page() {
               stiffness: 260,
               damping: 20,
             }}
-            className="flex justify-between mx-20 mt-14"
+            className="flex justify-between mx-20 max-md:mx-5 max-sm:mx-3 mt-14 max-sm:mt-0 max-sm:gap-7"
           >
             {/* Testimonials section */}
-            <div>
+            <div className="flex flex-col">
               <svg
                 width="36"
                 height="36"
@@ -111,11 +129,11 @@ function Page() {
                   fill="#344054"
                 />
               </svg>
-              <p className="text-xl font-medium">
-                Jenny&apos;s Exceptional product design
-                <br />
-                ensure our website&apos;s success.
-                <br />
+              <p className="text-xl max-sm:text-base font-medium max-sm:line-clamp-3 -z-20">
+                Jenny&apos;s Exceptional product design{" "}
+                <br className="max-sm:hidden" />
+                ensure our website&apos;s success{" "}
+                <br className="max-sm:hidden" />
                 Highly Recommended
               </p>
             </div>
@@ -128,6 +146,7 @@ function Page() {
                   viewBox="0 0 32 32"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="max-sm:w-7"
                 >
                   <path
                     d="M23.8912 19.0933C23.5459 19.428 23.3872 19.912 23.4659 20.3867L24.6512 26.9467C24.7512 27.5027 24.5165 28.0653 24.0512 28.3867C23.5952 28.72 22.9885 28.76 22.4912 28.4933L16.5858 25.4133C16.3805 25.304 16.1525 25.2453 15.9192 25.2387H15.5578C15.4325 25.2573 15.3099 25.2973 15.1979 25.3587L9.29118 28.4533C8.99918 28.6 8.66852 28.652 8.34452 28.6C7.55518 28.4507 7.02852 27.6987 7.15785 26.9053L8.34452 20.3453C8.42318 19.8667 8.26452 19.38 7.91918 19.04L3.10452 14.3733C2.70185 13.9827 2.56185 13.396 2.74585 12.8667C2.92452 12.3387 3.38052 11.9533 3.93118 11.8667L10.5578 10.9053C11.0619 10.8533 11.5045 10.5467 11.7312 10.0933L14.6512 4.10668C14.7205 3.97334 14.8099 3.85068 14.9179 3.74668L15.0378 3.65334C15.1005 3.58401 15.1725 3.52668 15.2525 3.48001L15.3979 3.42668L15.6245 3.33334H16.1859C16.6872 3.38534 17.1285 3.68534 17.3592 4.13334L20.3179 10.0933C20.5312 10.5293 20.9459 10.832 21.4245 10.9053L28.0512 11.8667C28.6112 11.9467 29.0792 12.3333 29.2645 12.8667C29.4392 13.4013 29.2885 13.988 28.8779 14.3733L23.8912 19.0933Z"
@@ -140,6 +159,7 @@ function Page() {
                   viewBox="0 0 32 32"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="max-sm:w-7"
                 >
                   <path
                     d="M23.8912 19.0933C23.5459 19.428 23.3872 19.912 23.4659 20.3867L24.6512 26.9467C24.7512 27.5027 24.5165 28.0653 24.0512 28.3867C23.5952 28.72 22.9885 28.76 22.4912 28.4933L16.5858 25.4133C16.3805 25.304 16.1525 25.2453 15.9192 25.2387H15.5578C15.4325 25.2573 15.3099 25.2973 15.1979 25.3587L9.29118 28.4533C8.99918 28.6 8.66852 28.652 8.34452 28.6C7.55518 28.4507 7.02852 27.6987 7.15785 26.9053L8.34452 20.3453C8.42318 19.8667 8.26452 19.38 7.91918 19.04L3.10452 14.3733C2.70185 13.9827 2.56185 13.396 2.74585 12.8667C2.92452 12.3387 3.38052 11.9533 3.93118 11.8667L10.5578 10.9053C11.0619 10.8533 11.5045 10.5467 11.7312 10.0933L14.6512 4.10668C14.7205 3.97334 14.8099 3.85068 14.9179 3.74668L15.0378 3.65334C15.1005 3.58401 15.1725 3.52668 15.2525 3.48001L15.3979 3.42668L15.6245 3.33334H16.1859C16.6872 3.38534 17.1285 3.68534 17.3592 4.13334L20.3179 10.0933C20.5312 10.5293 20.9459 10.832 21.4245 10.9053L28.0512 11.8667C28.6112 11.9467 29.0792 12.3333 29.2645 12.8667C29.4392 13.4013 29.2885 13.988 28.8779 14.3733L23.8912 19.0933Z"
@@ -152,6 +172,7 @@ function Page() {
                   viewBox="0 0 32 32"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="max-sm:w-7"
                 >
                   <path
                     d="M23.8912 19.0933C23.5459 19.428 23.3872 19.912 23.4659 20.3867L24.6512 26.9467C24.7512 27.5027 24.5165 28.0653 24.0512 28.3867C23.5952 28.72 22.9885 28.76 22.4912 28.4933L16.5858 25.4133C16.3805 25.304 16.1525 25.2453 15.9192 25.2387H15.5578C15.4325 25.2573 15.3099 25.2973 15.1979 25.3587L9.29118 28.4533C8.99918 28.6 8.66852 28.652 8.34452 28.6C7.55518 28.4507 7.02852 27.6987 7.15785 26.9053L8.34452 20.3453C8.42318 19.8667 8.26452 19.38 7.91918 19.04L3.10452 14.3733C2.70185 13.9827 2.56185 13.396 2.74585 12.8667C2.92452 12.3387 3.38052 11.9533 3.93118 11.8667L10.5578 10.9053C11.0619 10.8533 11.5045 10.5467 11.7312 10.0933L14.6512 4.10668C14.7205 3.97334 14.8099 3.85068 14.9179 3.74668L15.0378 3.65334C15.1005 3.58401 15.1725 3.52668 15.2525 3.48001L15.3979 3.42668L15.6245 3.33334H16.1859C16.6872 3.38534 17.1285 3.68534 17.3592 4.13334L20.3179 10.0933C20.5312 10.5293 20.9459 10.832 21.4245 10.9053L28.0512 11.8667C28.6112 11.9467 29.0792 12.3333 29.2645 12.8667C29.4392 13.4013 29.2885 13.988 28.8779 14.3733L23.8912 19.0933Z"
@@ -164,6 +185,7 @@ function Page() {
                   viewBox="0 0 32 32"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="max-sm:w-7"
                 >
                   <path
                     d="M23.8912 19.0933C23.5459 19.428 23.3872 19.912 23.4659 20.3867L24.6512 26.9467C24.7512 27.5027 24.5165 28.0653 24.0512 28.3867C23.5952 28.72 22.9885 28.76 22.4912 28.4933L16.5858 25.4133C16.3805 25.304 16.1525 25.2453 15.9192 25.2387H15.5578C15.4325 25.2573 15.3099 25.2973 15.1979 25.3587L9.29118 28.4533C8.99918 28.6 8.66852 28.652 8.34452 28.6C7.55518 28.4507 7.02852 27.6987 7.15785 26.9053L8.34452 20.3453C8.42318 19.8667 8.26452 19.38 7.91918 19.04L3.10452 14.3733C2.70185 13.9827 2.56185 13.396 2.74585 12.8667C2.92452 12.3387 3.38052 11.9533 3.93118 11.8667L10.5578 10.9053C11.0619 10.8533 11.5045 10.5467 11.7312 10.0933L14.6512 4.10668C14.7205 3.97334 14.8099 3.85068 14.9179 3.74668L15.0378 3.65334C15.1005 3.58401 15.1725 3.52668 15.2525 3.48001L15.3979 3.42668L15.6245 3.33334H16.1859C16.6872 3.38534 17.1285 3.68534 17.3592 4.13334L20.3179 10.0933C20.5312 10.5293 20.9459 10.832 21.4245 10.9053L28.0512 11.8667C28.6112 11.9467 29.0792 12.3333 29.2645 12.8667C29.4392 13.4013 29.2885 13.988 28.8779 14.3733L23.8912 19.0933Z"
@@ -176,6 +198,7 @@ function Page() {
                   viewBox="0 0 32 32"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="max-sm:w-7"
                 >
                   <path
                     d="M23.8912 19.0933C23.5459 19.428 23.3872 19.912 23.4659 20.3867L24.6512 26.9467C24.7512 27.5027 24.5165 28.0653 24.0512 28.3867C23.5952 28.72 22.9885 28.76 22.4912 28.4933L16.5858 25.4133C16.3805 25.304 16.1525 25.2453 15.9192 25.2387H15.5578C15.4325 25.2573 15.3099 25.2973 15.1979 25.3587L9.29118 28.4533C8.99918 28.6 8.66852 28.652 8.34452 28.6C7.55518 28.4507 7.02852 27.6987 7.15785 26.9053L8.34452 20.3453C8.42318 19.8667 8.26452 19.38 7.91918 19.04L3.10452 14.3733C2.70185 13.9827 2.56185 13.396 2.74585 12.8667C2.92452 12.3387 3.38052 11.9533 3.93118 11.8667L10.5578 10.9053C11.0619 10.8533 11.5045 10.5467 11.7312 10.0933L14.6512 4.10668C14.7205 3.97334 14.8099 3.85068 14.9179 3.74668L15.0378 3.65334C15.1005 3.58401 15.1725 3.52668 15.2525 3.48001L15.3979 3.42668L15.6245 3.33334H16.1859C16.6872 3.38534 17.1285 3.68534 17.3592 4.13334L20.3179 10.0933C20.5312 10.5293 20.9459 10.832 21.4245 10.9053L28.0512 11.8667C28.6112 11.9467 29.0792 12.3333 29.2645 12.8667C29.4392 13.4013 29.2885 13.988 28.8779 14.3733L23.8912 19.0933Z"
@@ -183,15 +206,19 @@ function Page() {
                   />
                 </svg>
               </div>
-              <p className="text-5xl font-bold">10 Years</p>
-              <p className="text-xl font-medium ml-auto">Experience</p>
+              <p className="text-5xl max-sm:text-2xl text-right font-bold">
+                10 Years
+              </p>
+              <p className="text-xl max-sm:text-base font-medium ml-auto">
+                Experience
+              </p>
             </div>
           </m.div>
         </AnimatePresence>
       </div>
       {/* Image */}
       <div className="relative flex justify-center">
-        <div className="absolute bottom-[-240px] -z-10">
+        <div className="absolute bottom-[-240px] max-sm:bottom-[-180px] -z-10">
           <Image
             className=""
             src={Profile1}
@@ -200,7 +227,7 @@ function Page() {
             alt="profile1"
           />
         </div>
-        <div className="absolute bottom-[-240px] -z-30">
+        <div className="absolute bottom-[-240px] max-sm:bottom-[-180px] -z-30">
           <Image
             className=""
             src={HalfCircle}
@@ -221,7 +248,7 @@ function Page() {
                 stiffness: 260,
                 damping: 20,
               }}
-              className="absolute top-[-210px] -z-20"
+              className="absolute top-[-210px] max-sm:top-[-80px] -z-20"
             >
               <Image
                 className=""
@@ -236,7 +263,7 @@ function Page() {
       </div>
       {/* Portfolio & Hire me button */}
       <div
-        className="flex pt-40 pb-7 lg:mx-96"
+        className="flex pt-40 max-sm:pt-[100px] pb-7 max-sm:pb-5 lg:mx-96"
         onMouseOver={() => {
           setHoverProfile1(true);
         }}
@@ -324,15 +351,16 @@ function Page() {
         </div>
       </div>
       {/* My services section */}
-      <div className="block bg-blackbg-gif py-28 px-20 bg-cover bg-no-repeat bg-center rounded-[50px] text-white">
+      <div className="block bg-blackbg-gif py-28 px-20 max-sm:px-2 max-sm:py-10 bg-cover bg-no-repeat bg-center rounded-[50px] max-sm:rounded-t-none text-white">
         {/* Heading My services section */}
-        <div className="flex justify-between items-center">
-          <h3 className="text-5xl font-medium">
+        <div className="flex max-sm:flex-col justify-between items-center max-sm:gap-3">
+          <h3 className="text-5xl font-medium max-sm:text-3xl max-sm:text-left">
             My <span className="text-primary-color">Services</span>
           </h3>
-          <p className="text-right">
+          <p className="text-right max-sm:text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            <br /> lacus nunc, posuere in justo vulputate, bibendum sodales{" "}
+            <br className="max-sm:hidden" /> lacus nunc, posuere in justo
+            vulputate, bibendum sodales{" "}
           </p>
         </div>
         {/* Carasouel section */}
@@ -344,56 +372,62 @@ function Page() {
         </div>
       </div>
       {/* My work experience section */}
-      <div className="mb-28">
-        <h3 className="text-6xl text-light-black font-medium text-center my-20">
-          My <span className="text-primary-color">Work Experience</span>
+      <div className="mb-28 max-sm:mb-10">
+        <h3 className="text-6xl text-light-black font-medium text-center my-20 max-sm:mt-10 max-sm:mb-5">
+          My{" "}
+          <span className="text-primary-color max-sm:text-light-black">
+            Work
+          </span>
+          <span className="text-primary-color"> Experience</span>
         </h3>
-        <div className="flex justify-between mx-20">
+        <div className="flex justify-between mx-20 max-sm:gap-4 max-sm:mx-2">
           {/* Company's section */}
           <div className="flex flex-col gap-20">
             <div>
-              <h4 className="text-4xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
                 Cognizant, Mumbai
               </h4>
-              <p className="text-primary-gray text-2xl mt-3.5">
+              <p className="text-primary-gray text-2xl mt-3.5 max-sm:text-base max-sm:mt-1">
                 Sep 2016- July 2020
               </p>
             </div>
             <div>
-              <h4 className="text-4xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
                 Sugee Pvt limited, Mumbai
               </h4>
-              <p className="text-primary-gray text-2xl mt-3.5">
+              <p className="text-primary-gray text-2xl mt-3.5 max-sm:text-base max-sm:mt-1">
                 Sep 2020- July 2023
               </p>
             </div>
             <div>
-              <h4 className="text-4xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
                 Cinetstox, Mumbai
               </h4>
-              <p className="text-primary-gray text-2xl mt-3.5">Sep 2023</p>
+              <p className="text-primary-gray text-2xl mt-3.5 max-sm:text-base max-sm:mt-1">
+                Sep 2023
+              </p>
             </div>
           </div>
           {/* Road diagram section */}
-          <div className="flex flex-col justify-items-center ">
-            <div className="rounded-full p-1.5 border-2 border-light-black border-dashed">
-              <div className="bg-primary-color w-9 h-9 rounded-full">
+          <div className="flex flex-col justify-items-center">
+            <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
+              <div className="bg-primary-color w-9 h-9 max-sm:w-7 max-sm:h-7 rounded-full">
                 <p className="invisible">.</p>
               </div>
             </div>
             <div className="h-28 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
               <p className="invisible">.</p>
             </div>
-            <div className="rounded-full p-1.5 border-2 border-light-black border-dashed">
-              <div className="bg-light-black w-9 h-9 rounded-full">
+            <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
+              <div className="bg-light-black w-9 h-9 max-sm:w-7 max-sm:h-7 rounded-full">
                 <p className="invisible">.</p>
               </div>
             </div>
             <div className="h-28 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
               <p className="invisible">.</p>
             </div>
-            <div className="rounded-full p-1.5 border-2 border-light-black border-dashed">
-              <div className="bg-primary-color w-9 h-9 rounded-full">
+            <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
+              <div className="bg-primary-color w-9 h-9 max-sm:w-7 max-sm:h-7 rounded-full">
                 <p className="invisible">.</p>
               </div>
             </div>
@@ -401,36 +435,40 @@ function Page() {
           {/* Role's section */}
           <div className="flex flex-col gap-8">
             <div>
-              <h4 className="text-4xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
                 Experince Designer
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5">
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
                 Lorem ipsum dolor sit amet, consectetur
-                <br /> adipiscing elit. Duis lacus nunc, posuere in justo
-                <br /> vulputate, bibendum sodales{" "}
+                <br className="max-sm:hidden" /> adipiscing elit. Duis lacus
+                nunc, posuere in justo
+                <br className="max-sm:hidden" /> vulputate, bibendum sodales{" "}
               </p>
             </div>
             <div>
-              <h4 className="text-4xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
                 UI/UX Designer
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5">
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
                 Lorem ipsum dolor sit amet, consectetur
-                <br /> adipiscing elit. Duis lacus nunc, posuere in justo
-                <br /> vulputate, bibendum sodales{" "}
+                <br className="max-sm:hidden" /> adipiscing elit. Duis lacus
+                nunc, posuere in justo
+                <br className="max-sm:hidden" /> vulputate, bibendum sodales{" "}
               </p>
             </div>
             <div>
-              <h4 className="text-4xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
                 Lead UX Designer
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5">Sep 2023</p>
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
+                Sep 2023
+              </p>
             </div>
           </div>
         </div>
       </div>
       {/* Why hire me? section */}
-      <div className="py-28 px-20 bg-gray-100 rounded-[50px] flex justify-center gap-20">
+      <div className="lg:py-28 lg:px-20 px-2 py-10 bg-gray-100 rounded-[50px] flex flex-col lg:flex-row md:gap-10 items-center justify-center lg:gap-20 max-sm:gap-10">
         {/* Profile photo section */}
         <div className="relative flex">
           <AnimatePresence>
@@ -471,129 +509,57 @@ function Page() {
           </m.div>
         </div>
         {/* Why hire me text section */}
-        <div className="flex flex-col gap-12 text-light-black">
-          <h4 className="text-6xl font-semibold">
+        <div className="flex flex-col gap-12 max-sm:gap-2 text-light-black">
+          <h4 className="text-6xl max-sm:text-3xl font-semibold max-sm:text-center">
             Why <span className="text-primary-color">Hire me</span>?
           </h4>
-          <p className="text-primary-gray text-xl">
+          <p className="text-primary-gray text-xl max-sm:text-base">
             Lorem ipsum dolor sit amet, consectetur
-            <br /> adipiscing elit. Duis lacus nunc, posuere in justo
-            <br /> vulputate, bibendum sodales{" "}
+            <br className="max-sm:hidden" /> adipiscing elit. Duis lacus nunc,
+            posuere in justo
+            <br className="max-sm:hidden" /> vulputate, bibendum sodales{" "}
           </p>
-          <div className="flex justify-between">
-            <div className="flex flex-col gap-2.5">
-              <h5 className="text-4xl font-medium flex">
+          <div className="flex justify-between max-sm:justify-around">
+            <div className="flex flex-col gap-2.5 max-sm:gap-0">
+              <h5 className="text-4xl max-sm:text-xl font-medium flex">
                 <CountUp start={0} end={450} duration={4} />+
               </h5>
-              <p className="text-gray-500 text-xl">Project Completed</p>
+              <p className="text-gray-500 text-xl max-sm:text-base">
+                Project Completed
+              </p>
             </div>
-            <div className="flex flex-col gap-2.5">
-              <h5 className="text-4xl font-medium flex">
+            <div className="flex flex-col gap-2.5 max-sm:gap-0">
+              <h5 className="text-4xl max-sm:text-xl font-medium flex">
                 <CountUp start={0} end={450} duration={4} />+
               </h5>
-              <p className="text-gray-500 text-xl">Project Completed</p>
+              <p className="text-gray-500 text-xl max-sm:text-base">
+                Project Completed
+              </p>
             </div>
           </div>
-          <div className="mx-auto">
-            <button className="px-14 py-8 border rounded-[32px] border-light-black inline-block text-2xl font-semibold hover:text-white hover:bg-light-black duration-200">
+          <div className="mx-auto mt-4">
+            <button className="px-14 py-8  border rounded-[32px] max-sm:rounded-[26px] border-light-black inline-block text-2xl max-sm:text-xl font-semibold hover:text-white hover:bg-light-black duration-200">
               Hire me
             </button>
           </div>
         </div>
       </div>
       {/* Lets have a look at my Projects */}
-      <div className="px-20 py-24">
+      <div className="lg:px-20 lg:py-24 py-10 pb-0 px-2">
         {/* Heading Projects section */}
         <div className="flex justify-between items-center">
-          <h4 className="text-light-black text-6xl font-semibold">
+          <h4 className="text-light-black lg:text-6xl text-3xl md:text-4xl font-semibold">
             Lets have a look at
             <br />
             my <span className="text-primary-color">Projects</span>
           </h4>
           <div className="items-center">
-            <button className="text-white text-xl font-bold px-10 py-5 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
+            <button className="text-white text-xl max-sm:text-base font-bold lg:px-10 lg:py-5 px-5 py-2.5 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
               See All
             </button>
           </div>
         </div>
         {/* Carousel Section */}
-        {/* <div className="flex justify-around pt-12">
-          <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
-            onMouseOver={() => {
-              setHoverProjectCard(1);
-            }}
-            onMouseOut={() => {
-              setHoverProjectCard(0);
-            }}
-          >
-            <div
-              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
-                hoverProjectCard == 1
-                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
-              <AnimatePresence>
-                {hoverProjectCard == 1 && (
-                  <m.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100 }}
-                    transition={{
-                      duration: 0.2,
-                      transition: { duration: 0.1 },
-                    }}
-                  >
-                    <p className="text-orange-100 text-base">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
-                    </p>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </div>
-          <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
-            onMouseOver={() => {
-              setHoverProjectCard(2);
-            }}
-            onMouseOut={() => {
-              setHoverProjectCard(0);
-            }}
-          >
-            <div
-              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
-                hoverProjectCard == 2
-                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
-              <AnimatePresence>
-                {hoverProjectCard == 2 && (
-                  <m.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100, transition: { duration: 0.1 } }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <p className="text-orange-100 text-base">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
-                    </p>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </div>
-        </div> */}
         <Carousel
           swipeable={true}
           draggable={true}
@@ -610,10 +576,10 @@ function Page() {
           removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px mb-10"
-          className="mb-10 pl-20 py-12"
+          className="mb-10 lg:pl-20 pl-2 py-12 max-sm:pt-3 max-sm:pb-0"
         >
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(1);
             }}
@@ -628,7 +594,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 1 && (
                   <m.div
@@ -640,7 +606,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -652,7 +618,7 @@ function Page() {
             </div>
           </div>
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(2);
             }}
@@ -667,7 +633,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 2 && (
                   <m.div
@@ -679,7 +645,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -691,7 +657,7 @@ function Page() {
             </div>
           </div>
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(3);
             }}
@@ -706,7 +672,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 3 && (
                   <m.div
@@ -718,7 +684,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -730,7 +696,7 @@ function Page() {
             </div>
           </div>
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(4);
             }}
@@ -745,7 +711,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 4 && (
                   <m.div
@@ -757,7 +723,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -769,7 +735,7 @@ function Page() {
             </div>
           </div>
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(5);
             }}
@@ -784,7 +750,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 5 && (
                   <m.div
@@ -796,7 +762,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -808,7 +774,7 @@ function Page() {
             </div>
           </div>
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(6);
             }}
@@ -823,7 +789,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 6 && (
                   <m.div
@@ -835,7 +801,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -847,7 +813,7 @@ function Page() {
             </div>
           </div>
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(7);
             }}
@@ -862,7 +828,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 7 && (
                   <m.div
@@ -874,7 +840,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -886,7 +852,7 @@ function Page() {
             </div>
           </div>
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(8);
             }}
@@ -901,7 +867,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 8 && (
                   <m.div
@@ -913,7 +879,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -925,7 +891,7 @@ function Page() {
             </div>
           </div>
           <div
-            className="relative h-[300px] w-[600px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(9);
             }}
@@ -940,7 +906,7 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl text-stone-50 font-bold mb-2">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
               <AnimatePresence>
                 {hoverProjectCard == 9 && (
                   <m.div
@@ -952,7 +918,7 @@ function Page() {
                       transition: { duration: 0.1 },
                     }}
                   >
-                    <p className="text-orange-100 text-base">
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sed congue interdum ligula a dignissim. Lorem ipsum dolor
                       sit amet, consectetur adipiscing elit. Sed lobortis orci
@@ -966,641 +932,619 @@ function Page() {
         </Carousel>
       </div>
       {/* Testimonial section */}
-      <div className="py-28 bg-cover bg-no-repeat bg-center bg-black-primary-bg text-white rounded-[50px]">
+      <div className="py-28 max-sm:py-10 bg-cover bg-no-repeat bg-center bg-black-primary-bg text-white rounded-[50px] max-sm:rounded-lg">
         {/* Heading and description section */}
         <div className="flex flex-col text-center">
-          <h3 className="text-5xl font-medium text-white mb-3.5">
-            Testimonials That
-            <br />
+          <h3 className="text-5xl max-sm:text-3xl font-medium text-white mb-3.5 max-sm:mx-5">
+            Testimonials That <br className="max-sm:hidden" />
             Speak to <span className="text-primary-color">My Results</span>
           </h3>
           <p className="text-xl font-medium text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
-            interdum
-            <br />
+            interdum <br className="max-sm:hidden" />
             ligula a dignissim. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Sed
-            <br />
+            adipiscing elit. Sed <br className="max-sm:hidden" />
             lobortis orci elementum egestas lobortis.
           </p>
         </div>
         {/* Carousel section */}
-        <div className="flex pt-24 mx-20">
-        <Carousel
-          swipeable={true}
-          draggable={true}
-          showDots={false}
-          responsive={responsive}
-          ssr={true}
-          infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={3000}
-          keyBoardControl={true}
-          // customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={[ "desktop", "tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
-          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
-            {/* Heading section */}
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <Image
-                      className=""
-                      src={TestimonialProfile}
-                      width={50}
-                      height={50}
-                      alt="testimonial profile"
-                    />
+        <div className="flex pt-24 max-sm:pt-5">
+          <Carousel
+            swipeable={true}
+            draggable={true}
+            showDots={false}
+            responsive={testimonialResponsive}
+            ssr={true}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            keyBoardControl={true}
+            // customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+            className="lg:pl-96 pl-5"
+          >
+            <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+              {/* Heading section */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <Image
+                        className=""
+                        src={TestimonialProfile}
+                        width={50}
+                        height={50}
+                        alt="testimonial profile"
+                      />
+                    </div>
+                    <div className="">
+                      <p className="text-2xl font-bold">Jayesh Patil</p>
+                      <p className="text-lg">CEO, Lirante</p>
+                    </div>
                   </div>
-                  <div className="">
-                    <p className="text-2xl font-bold">Jayesh Patil</p>
-                    <p className="text-lg">CEO, Lirante</p>
+                  <div className="flex gap-1">
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <p className="text-[25.69px] font-medium">5.0</p>
                   </div>
                 </div>
-                <div className="flex gap-1">
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <p className="text-[25.69px] font-medium">5.0</p>
-                </div>
+                <svg
+                  width="128"
+                  height="129"
+                  viewBox="0 0 128 129"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                  <path
+                    d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                </svg>
               </div>
-              <svg
-                width="128"
-                height="129"
-                viewBox="0 0 128 129"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-                <path
-                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-              </svg>
+              <p className="text-xl">
+                consectetur adipiscing elit. Sed congue interdum ligula a
+                dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+                orci elementum egestas lobortis.
+              </p>
             </div>
-            <p className="text-xl">
-              consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis.
-            </p>
-          </div>
-          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
-            {/* Heading section */}
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <Image
-                      className=""
-                      src={TestimonialProfile}
-                      width={50}
-                      height={50}
-                      alt="testimonial profile"
-                    />
+            <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+              {/* Heading section */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <Image
+                        className=""
+                        src={TestimonialProfile}
+                        width={50}
+                        height={50}
+                        alt="testimonial profile"
+                      />
+                    </div>
+                    <div className="">
+                      <p className="text-2xl font-bold">Jayesh Patil</p>
+                      <p className="text-lg">CEO, Lirante</p>
+                    </div>
                   </div>
-                  <div className="">
-                    <p className="text-2xl font-bold">Jayesh Patil</p>
-                    <p className="text-lg">CEO, Lirante</p>
+                  <div className="flex gap-1">
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <p className="text-[25.69px] font-medium">5.0</p>
                   </div>
                 </div>
-                <div className="flex gap-1">
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <p className="text-[25.69px] font-medium">5.0</p>
-                </div>
+                <svg
+                  width="128"
+                  height="129"
+                  viewBox="0 0 128 129"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                  <path
+                    d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                </svg>
               </div>
-              <svg
-                width="128"
-                height="129"
-                viewBox="0 0 128 129"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-                <path
-                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-              </svg>
+              <p className="text-xl">
+                consectetur adipiscing elit. Sed congue interdum ligula a
+                dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+                orci elementum egestas lobortis.
+              </p>
             </div>
-            <p className="text-xl">
-              consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis.
-            </p>
-          </div>
-          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
-            {/* Heading section */}
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <Image
-                      className=""
-                      src={TestimonialProfile}
-                      width={50}
-                      height={50}
-                      alt="testimonial profile"
-                    />
+            <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+              {/* Heading section */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <Image
+                        className=""
+                        src={TestimonialProfile}
+                        width={50}
+                        height={50}
+                        alt="testimonial profile"
+                      />
+                    </div>
+                    <div className="">
+                      <p className="text-2xl font-bold">Jayesh Patil</p>
+                      <p className="text-lg">CEO, Lirante</p>
+                    </div>
                   </div>
-                  <div className="">
-                    <p className="text-2xl font-bold">Jayesh Patil</p>
-                    <p className="text-lg">CEO, Lirante</p>
+                  <div className="flex gap-1">
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <p className="text-[25.69px] font-medium">5.0</p>
                   </div>
                 </div>
-                <div className="flex gap-1">
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <p className="text-[25.69px] font-medium">5.0</p>
-                </div>
+                <svg
+                  width="128"
+                  height="129"
+                  viewBox="0 0 128 129"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                  <path
+                    d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                </svg>
               </div>
-              <svg
-                width="128"
-                height="129"
-                viewBox="0 0 128 129"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-                <path
-                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-              </svg>
+              <p className="text-xl">
+                consectetur adipiscing elit. Sed congue interdum ligula a
+                dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+                orci elementum egestas lobortis.
+              </p>
             </div>
-            <p className="text-xl">
-              consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis.
-            </p>
-          </div>
-          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
-            {/* Heading section */}
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <Image
-                      className=""
-                      src={TestimonialProfile}
-                      width={50}
-                      height={50}
-                      alt="testimonial profile"
-                    />
+            <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+              {/* Heading section */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <Image
+                        className=""
+                        src={TestimonialProfile}
+                        width={50}
+                        height={50}
+                        alt="testimonial profile"
+                      />
+                    </div>
+                    <div className="">
+                      <p className="text-2xl font-bold">Jayesh Patil</p>
+                      <p className="text-lg">CEO, Lirante</p>
+                    </div>
                   </div>
-                  <div className="">
-                    <p className="text-2xl font-bold">Jayesh Patil</p>
-                    <p className="text-lg">CEO, Lirante</p>
+                  <div className="flex gap-1">
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <p className="text-[25.69px] font-medium">5.0</p>
                   </div>
                 </div>
-                <div className="flex gap-1">
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <p className="text-[25.69px] font-medium">5.0</p>
-                </div>
+                <svg
+                  width="128"
+                  height="129"
+                  viewBox="0 0 128 129"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                  <path
+                    d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                </svg>
               </div>
-              <svg
-                width="128"
-                height="129"
-                viewBox="0 0 128 129"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-                <path
-                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-              </svg>
+              <p className="text-xl">
+                consectetur adipiscing elit. Sed congue interdum ligula a
+                dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+                orci elementum egestas lobortis.
+              </p>
             </div>
-            <p className="text-xl">
-              consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis.
-            </p>
-          </div>
-          <div className="p-5 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
-            {/* Heading section */}
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <div>
-                    <Image
-                      className=""
-                      src={TestimonialProfile}
-                      width={50}
-                      height={50}
-                      alt="testimonial profile"
-                    />
+            <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
+              {/* Heading section */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <div>
+                      <Image
+                        className=""
+                        src={TestimonialProfile}
+                        width={50}
+                        height={50}
+                        alt="testimonial profile"
+                      />
+                    </div>
+                    <div className="">
+                      <p className="text-2xl font-bold">Jayesh Patil</p>
+                      <p className="text-lg">CEO, Lirante</p>
+                    </div>
                   </div>
-                  <div className="">
-                    <p className="text-2xl font-bold">Jayesh Patil</p>
-                    <p className="text-lg">CEO, Lirante</p>
+                  <div className="flex gap-1">
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="max-sm:w-7"
+                    >
+                      <path
+                        d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
+                        fill="#FD853A"
+                      />
+                    </svg>
+                    <p className="text-[25.69px] font-medium">5.0</p>
                   </div>
                 </div>
-                <div className="flex gap-1">
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <svg
-                    width="32"
-                    height="33"
-                    viewBox="0 0 32 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23.8912 20.0095C23.5459 20.3442 23.3872 20.8282 23.4659 21.3028L24.6512 27.8628C24.7512 28.4188 24.5165 28.9815 24.0512 29.3028C23.5952 29.6362 22.9885 29.6762 22.4912 29.4095L16.5858 26.3295C16.3805 26.2202 16.1525 26.1615 15.9192 26.1548H15.5578C15.4325 26.1735 15.3099 26.2135 15.1979 26.2748L9.29118 29.3695C8.99918 29.5162 8.66852 29.5682 8.34452 29.5162C7.55518 29.3668 7.02852 28.6148 7.15785 27.8215L8.34452 21.2615C8.42318 20.7828 8.26452 20.2962 7.91918 19.9562L3.10452 15.2895C2.70185 14.8988 2.56185 14.3122 2.74585 13.7828C2.92452 13.2548 3.38052 12.8695 3.93118 12.7828L10.5578 11.8215C11.0619 11.7695 11.5045 11.4628 11.7312 11.0095L14.6512 5.02284C14.7205 4.88951 14.8099 4.76685 14.9179 4.66285L15.0378 4.56951C15.1005 4.50018 15.1725 4.44285 15.2525 4.39618L15.3979 4.34285L15.6245 4.24951H16.1859C16.6872 4.30151 17.1285 4.60151 17.3592 5.04951L20.3179 11.0095C20.5312 11.4455 20.9459 11.7482 21.4245 11.8215L28.0512 12.7828C28.6112 12.8628 29.0792 13.2495 29.2645 13.7828C29.4392 14.3175 29.2885 14.9042 28.8779 15.2895L23.8912 20.0095Z"
-                      fill="#FD853A"
-                    />
-                  </svg>
-                  <p className="text-[25.69px] font-medium">5.0</p>
-                </div>
+                <svg
+                  width="128"
+                  height="129"
+                  viewBox="0 0 128 129"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                  <path
+                    d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
+                    fill="#667085"
+                    fill-opacity="0.3"
+                  />
+                </svg>
               </div>
-              <svg
-                width="128"
-                height="129"
-                viewBox="0 0 128 129"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M84.8532 66.0542H109.867C109.44 90.9609 104.533 95.0676 89.2266 104.134C87.4666 105.201 86.8799 107.441 87.9466 109.254C89.0132 111.014 91.2532 111.601 93.0666 110.534C111.093 99.8676 117.387 93.3609 117.387 62.3209V33.5742C117.387 24.4542 109.973 17.0942 100.907 17.0942H84.9066C75.5199 17.0942 68.4266 24.1876 68.4266 33.5742V49.5742C68.3732 58.9609 75.4666 66.0542 84.8532 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-                <path
-                  d="M27.1466 66.0542H52.16C51.7333 90.9609 46.8266 95.0676 31.52 104.134C29.76 105.201 29.1733 107.441 30.24 109.254C31.3066 111.014 33.5466 111.601 35.36 110.534C53.3866 99.8676 59.68 93.3609 59.68 62.3209V33.5742C59.68 24.4542 52.2666 17.0942 43.2 17.0942H27.2C17.76 17.0942 10.6666 24.1876 10.6666 33.5742V49.5742C10.6666 58.9609 17.76 66.0542 27.1466 66.0542Z"
-                  fill="#667085"
-                  fill-opacity="0.3"
-                />
-              </svg>
+              <p className="text-xl">
+                consectetur adipiscing elit. Sed congue interdum ligula a
+                dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
+                orci elementum egestas lobortis.
+              </p>
             </div>
-            <p className="text-xl">
-              consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis. consectetur adipiscing elit. Sed congue interdum ligula a
-              dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-              orci elementum egestas lobortis.Sed lobortis orci elementum
-              egestas lobortis.
-            </p>
-          </div>
           </Carousel>
         </div>
       </div>
       {/* Mail us section */}
-      <div className="flex flex-col mx-auto text-center py-28">
-        <h3 className="text-6xl font-semibold">
-          Have an Awsome Project
-          <br />
+      <div className="flex flex-col mx-auto text-center lg:py-28 md:py-16 py-10">
+        <h3 className="text-6xl max-sm:text-3xl font-semibold">
+          Have an Awsome Project{" "}
+          <br className="max-sm:hidden"/>
           Idea? <span className="text-primary-color">Let&apos;s Discuss</span>
         </h3>
         <div>
@@ -1611,24 +1555,24 @@ function Page() {
               viewBox="0 0 32 33"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-2 left-2 p-2 bg-orange-100 rounded-full"
+              className="absolute top-2 left-2 max-sm:left-1.5 p-2 max-sm:w-10 max-sm:h-10 max-sm:p-1 bg-orange-100 rounded-full"
             >
               <path
                 d="M22.6666 4.74756H9.33329C5.33329 4.74756 2.66663 6.74756 2.66663 11.4142V20.7476C2.66663 25.4142 5.33329 27.4142 9.33329 27.4142H22.6666C26.6666 27.4142 29.3333 25.4142 29.3333 20.7476V11.4142C29.3333 6.74756 26.6666 4.74756 22.6666 4.74756ZM23.2933 12.8676L19.12 16.2009C18.24 16.9076 17.12 17.2542 16 17.2542C14.88 17.2542 13.7466 16.9076 12.88 16.2009L8.70663 12.8676C8.27996 12.5209 8.21329 11.8809 8.54663 11.4542C8.89329 11.0276 9.51996 10.9476 9.94663 11.2942L14.12 14.6276C15.1333 15.4409 16.8533 15.4409 17.8666 14.6276L22.04 11.2942C22.4666 10.9476 23.1066 11.0142 23.44 11.4542C23.7866 11.8809 23.72 12.5209 23.2933 12.8676Z"
                 fill="#FD853A"
               />
             </svg>
-            <button className="absolute top-1 right-2 text-white text-xl px-10 py-3 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
+            <button className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
               Send
             </button>
             <input
               type="text"
-              className="rounded-full w-[750px] h-16 pl-16"
+              className="rounded-full w-[750px] max-sm:w-full max-sm:h-14 h-16 pl-16 max-sm:pl-12 min-w-[300px]"
               placeholder="Enter Email Address"
             />
           </div>
-          <div className="flex justify-between mx-96 mt-1.5">
-            <div className="flex gap-0.5">
+          <div className="flex justify-between lg:mx-96 mx-2 mt-1.5">
+            <div className="flex gap-0.5 max-sm:gap-0">
               <svg
                 width="24"
                 height="25"
@@ -1653,11 +1597,11 @@ function Page() {
                   fill="#292D32"
                 />
               </svg>
-              <p className="text-light-black text-base">
+              <p className="text-light-black text-base max-sm:text-xs">
                 4.9/5 Average Ratings
               </p>
             </div>
-            <div className="flex gap-0.5">
+            <div className="flex gap-0.5 max-sm:gap-0">
               <svg
                 width="24"
                 height="25"
@@ -1674,9 +1618,9 @@ function Page() {
                   fill="#292D32"
                 />
               </svg>
-              <p className="text-light-black text-base">25+ Winning Awards</p>
+              <p className="text-light-black text-base max-sm:text-xs">25+ Winning Awards</p>
             </div>
-            <div className="flex gap-0.5">
+            <div className="flex gap-0.5 max-sm:gap-0">
               <svg
                 width="24"
                 height="25"
@@ -1689,7 +1633,7 @@ function Page() {
                   fill="#292D32"
                 />
               </svg>
-              <p className="text-light-black text-base">
+              <p className="text-light-black text-base max-sm:text-xs">
                 Certified Product Designer
               </p>
             </div>
