@@ -56,6 +56,28 @@ function Page() {
   const [hoverHiremeButton, setHoverHiremeButton] = useState<Boolean>(false);
   const [hoverProfile2, setHoverProfile2] = useState<Boolean>(false);
   const [hoverProjectCard, setHoverProjectCard] = useState<Number>(0);
+  const [userMail, setUserMail] = useState('');
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('api/storeUserMail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userMail }),
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log('User mail stored successfully:', responseData);
+      } else {
+        console.error('Failed to store user mail:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error storing user mail:', error);
+    }
+  };
 
   return (
     <div>
@@ -1871,13 +1893,14 @@ function Page() {
                 fill="#FD853A"
               />
             </svg>
-            <button className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
+            <button onClick={handleSubmit} className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
               Send
             </button>
             <input
               type="text"
               className="rounded-full w-[750px] max-sm:w-full max-sm:h-14 h-16 pl-16 max-sm:pl-12 min-w-[300px]"
               placeholder="Enter Email Address"
+              onChange={(e) => setUserMail(e.target.value)}
             />
           </div>
           <div className="flex justify-between lg:mx-96 mx-2 mt-1.5">
