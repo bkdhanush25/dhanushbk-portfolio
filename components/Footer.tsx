@@ -24,14 +24,14 @@ const Footer = () => {
                 stroke="white"
                 stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M12.75 12.3311H30.25V29.8311"
                 stroke="white"
                 stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
             </svg>
           </m.button>
@@ -39,7 +39,7 @@ const Footer = () => {
       </div>
       <hr className="lg:my-14 my-7" />
       {/* 4 div flex section */}
-      <div className="md:grid lg:grid-cols-5 max-lg:grid-cols-3 justify-items-center gap-2">
+      <div className="md:grid lg:grid-cols-5 lg:justify-items-center max-lg:grid-cols-3 justify-around gap-2 md:gap-10">
         {/* BK Dhanush section */}
         <div className="col-span-2">
           <Link href="/">

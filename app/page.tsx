@@ -7,10 +7,12 @@ import TransitionRing from "../public/transition-ring.png";
 import HalfCircle from "../public/primary-half-circle.png";
 import SpringTransition from "../public/spring-transition.png";
 import TestimonialProfile from "../public/testimonial-profile.png";
+import MyServices1 from "../public/myservices1.png";
 import Image from "next/image";
 import CountUp from "react-countup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -62,7 +64,7 @@ function Page() {
         <AnimatePresence>
           {!hoverProfile1 && (
             <m.div
-              initial={{ opacity: 0, y: 200 }}
+              // initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{
                 opacity: 0,
@@ -109,7 +111,7 @@ function Page() {
               stiffness: 260,
               damping: 20,
             }}
-            className="flex justify-between mx-20 max-md:mx-5 max-sm:mx-3 mt-14 max-sm:mt-0 max-sm:gap-7"
+            className="flex justify-between lg:mx-20 md:mx-5 mx-3 mt-14 max-sm:mt-0 max-sm:gap-7"
           >
             {/* Testimonials section */}
             <div className="flex flex-col">
@@ -295,14 +297,14 @@ function Page() {
                   stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M12.25 12.25H29.75V29.75"
                   stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             )}
@@ -336,14 +338,14 @@ function Page() {
                   stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M12.25 12.25H29.75V29.75"
                   stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             )}
@@ -351,38 +353,148 @@ function Page() {
         </div>
       </div>
       {/* My services section */}
-      <div className="block bg-blackbg-gif py-28 px-20 max-sm:px-2 max-sm:py-10 bg-cover bg-no-repeat bg-center rounded-[50px] max-sm:rounded-t-none text-white">
+      <div className="block bg-blackbg-gif lg:py-28 lg:px-20 md:px-5 px-3 py-10 bg-cover bg-no-repeat bg-center rounded-[50px] max-sm:rounded-t-none text-white">
         {/* Heading My services section */}
         <div className="flex max-sm:flex-col justify-between items-center max-sm:gap-3">
           <h3 className="text-5xl font-medium max-sm:text-3xl max-sm:text-left">
             My <span className="text-primary-color">Services</span>
           </h3>
-          <p className="text-right max-sm:text-left">
+          <p className="text-right max-sm:text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
             <br className="max-sm:hidden" /> lacus nunc, posuere in justo
             vulputate, bibendum sodales{" "}
           </p>
         </div>
         {/* Carasouel section */}
-        <div className="grid grid-cols-3 gap-2 mt-24">
-          <div className="border border-white rounded-[35px] backdrop-blur-md text-white">
-            <h4 className="text-3xl font-medium mt-11 mx-9">UI/UX design</h4>
+        <div className="flex justify-between md:justify-around md:gap-y-10 gap-y-5 flex-wrap lg:mt-24 mt-10 md:mt-16">
+          <div className="border border-white rounded-[35px] backdrop-blur-sm text-white">
+            <h4 className="text-3xl font-medium mt-11 ml-9">UI/UX design</h4>
             <hr className="opacity-50 my-6" />
+            <div className="relative flex">
+              <Image
+                className="pt-5 md:w-80 lg:w-full"
+                src={MyServices1}
+                width={400}
+                height={400}
+                alt="my-services-1"
+              />
+              <div className="absolute right-3 bottom-3 bg-light-black rounded-full text-white duration-150 cursor-pointer hover:bg-primary-color">
+                <svg
+                  className="p-2"
+                  width="73"
+                  height="72"
+                  viewBox="0 0 73 72"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.5 51L51.5 21"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M21.5 21H51.5V51"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="border border-white rounded-[35px] backdrop-blur-sm text-white">
+            <h4 className="text-3xl font-medium mt-11 ml-9">UI/UX design</h4>
+            <hr className="opacity-50 my-6" />
+            <div className="relative flex">
+              <Image
+                className="pt-5 md:w-80 lg:w-full"
+                src={MyServices1}
+                width={400}
+                height={400}
+                alt="my-services-1"
+              />
+              <div className="absolute right-3 bottom-3 bg-light-black rounded-full text-white duration-150 cursor-pointer hover:bg-primary-color">
+                <svg
+                  className="p-2"
+                  width="73"
+                  height="72"
+                  viewBox="0 0 73 72"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.5 51L51.5 21"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M21.5 21H51.5V51"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="border border-white rounded-[35px] backdrop-blur-sm text-white">
+            <h4 className="text-3xl font-medium mt-11 ml-9">UI/UX design</h4>
+            <hr className="opacity-50 my-6" />
+            <div className="relative flex">
+              <Image
+                className="pt-5 md:w-80 lg:w-full"
+                src={MyServices1}
+                width={400}
+                height={400}
+                alt="my-services-1"
+              />
+              <div className="absolute right-3 bottom-3 bg-light-black rounded-full text-white duration-150 cursor-pointer hover:bg-primary-color">
+                <svg
+                  className="p-2"
+                  width="73"
+                  height="72"
+                  viewBox="0 0 73 72"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.5 51L51.5 21"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M21.5 21H51.5V51"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       {/* My work experience section */}
       <div className="mb-28 max-sm:mb-10">
-        <h3 className="text-6xl text-light-black font-medium text-center my-20 max-sm:mt-10 max-sm:mb-5">
+        <h3 className="text-6xl text-light-black font-medium text-center lg:my-20 mt-10 mb-8">
           My{" "}
           <span className="text-primary-color max-sm:text-light-black">
             Work
           </span>
           <span className="text-primary-color"> Experience</span>
         </h3>
-        <div className="flex justify-between mx-20 max-sm:gap-4 max-sm:mx-2">
+        <div className="grid grid-cols-5 justify-center lg:mx-20 gap-0 lg:gap-0 mx-2 md:mx-10 justify-items-center">
           {/* Company's section */}
-          <div className="flex flex-col gap-20">
+          <div className="flex flex-col gap-20 text-right col-span-2">
             <div>
               <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
                 Cognizant, Mumbai
@@ -409,7 +521,7 @@ function Page() {
             </div>
           </div>
           {/* Road diagram section */}
-          <div className="flex flex-col justify-items-center">
+          <div className="flex flex-col justify-items-center col-span-1">
             <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
               <div className="bg-primary-color w-9 h-9 max-sm:w-7 max-sm:h-7 rounded-full">
                 <p className="invisible">.</p>
@@ -433,16 +545,16 @@ function Page() {
             </div>
           </div>
           {/* Role's section */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 col-span-2">
             <div>
               <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
                 Experince Designer
               </h4>
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Lorem ipsum dolor sit amet, consectetur
-                <br className="max-sm:hidden" /> adipiscing elit. Duis lacus
-                nunc, posuere in justo
-                <br className="max-sm:hidden" /> vulputate, bibendum sodales{" "}
+                Lorem ipsum dolor sit amet, consectetur{" "}
+                <br className="lg:inline hidden" /> adipiscing elit. Duis lacus
+                nunc, posuere in justo <br className="lg:inline hidden" />{" "}
+                vulputate, bibendum sodales{" "}
               </p>
             </div>
             <div>
@@ -450,10 +562,10 @@ function Page() {
                 UI/UX Designer
               </h4>
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Lorem ipsum dolor sit amet, consectetur
-                <br className="max-sm:hidden" /> adipiscing elit. Duis lacus
-                nunc, posuere in justo
-                <br className="max-sm:hidden" /> vulputate, bibendum sodales{" "}
+                Lorem ipsum dolor sit amet, consectetur{" "}
+                <br className="lg:inline hidden" /> adipiscing elit. Duis lacus
+                nunc, posuere in justo <br className="lg:inline hidden" />{" "}
+                vulputate, bibendum sodales{" "}
               </p>
             </div>
             <div>
@@ -468,7 +580,7 @@ function Page() {
         </div>
       </div>
       {/* Why hire me? section */}
-      <div className="lg:py-28 lg:px-20 px-2 py-10 bg-gray-100 rounded-[50px] flex flex-col lg:flex-row md:gap-10 items-center justify-center lg:gap-20 max-sm:gap-10">
+      <div className="lg:py-28 lg:px-20 px-2 md:py-10 pt-6 pb-7 bg-gray-100 rounded-[50px] flex flex-col lg:flex-row md:gap-10 items-center justify-center lg:gap-20 max-sm:gap-10">
         {/* Profile photo section */}
         <div className="relative flex">
           <AnimatePresence>
@@ -568,7 +680,7 @@ function Page() {
           ssr={true}
           infinite={true}
           autoPlay={true}
-          autoPlaySpeed={3000}
+          autoPlaySpeed={4000}
           keyBoardControl={true}
           // customTransition="all .5"
           transitionDuration={500}
@@ -576,7 +688,7 @@ function Page() {
           removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px mb-10"
-          className="mb-10 lg:pl-20 pl-2 py-12 max-sm:pt-3 max-sm:pb-0"
+          className="mb-10 lg:pl-20 pl-2 py-12 max-sm:pt-6 max-sm:pb-0 relative"
         >
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -594,7 +706,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 1 && (
                   <m.div
@@ -616,6 +730,26 @@ function Page() {
                 )}
               </AnimatePresence>
             </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 1
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </div>
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -633,7 +767,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 2 && (
                   <m.div
@@ -655,6 +791,26 @@ function Page() {
                 )}
               </AnimatePresence>
             </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 2
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </div>
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -672,7 +828,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 3 && (
                   <m.div
@@ -694,6 +852,26 @@ function Page() {
                 )}
               </AnimatePresence>
             </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 3
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </div>
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -711,7 +889,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 4 && (
                   <m.div
@@ -733,6 +913,26 @@ function Page() {
                 )}
               </AnimatePresence>
             </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 4
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </div>
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -750,7 +950,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 5 && (
                   <m.div
@@ -772,6 +974,26 @@ function Page() {
                 )}
               </AnimatePresence>
             </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 5
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </div>
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -789,7 +1011,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 6 && (
                   <m.div
@@ -811,6 +1035,26 @@ function Page() {
                 )}
               </AnimatePresence>
             </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 6
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </div>
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -828,7 +1072,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 7 && (
                   <m.div
@@ -850,6 +1096,26 @@ function Page() {
                 )}
               </AnimatePresence>
             </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 7
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </div>
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -867,7 +1133,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 8 && (
                   <m.div
@@ -889,6 +1157,26 @@ function Page() {
                 )}
               </AnimatePresence>
             </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 8
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </div>
           <div
             className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
@@ -906,7 +1194,9 @@ function Page() {
                   : "duration-200"
               }`}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">Lirante</h5>
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                Lirante
+              </h5>
               <AnimatePresence>
                 {hoverProjectCard == 9 && (
                   <m.div
@@ -927,6 +1217,26 @@ function Page() {
                   </m.div>
                 )}
               </AnimatePresence>
+            </div>
+            <div
+            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 9
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
             </div>
           </div>
         </Carousel>
@@ -957,7 +1267,7 @@ function Page() {
             ssr={true}
             infinite={true}
             autoPlay={true}
-            autoPlaySpeed={3000}
+            autoPlaySpeed={4000}
             keyBoardControl={true}
             // customTransition="all .5"
             transitionDuration={500}
@@ -1543,8 +1853,7 @@ function Page() {
       {/* Mail us section */}
       <div className="flex flex-col mx-auto text-center lg:py-28 md:py-16 py-10">
         <h3 className="text-6xl max-sm:text-3xl font-semibold">
-          Have an Awsome Project{" "}
-          <br className="max-sm:hidden"/>
+          Have an Awsome Project <br className="max-sm:hidden" />
           Idea? <span className="text-primary-color">Let&apos;s Discuss</span>
         </h3>
         <div>
@@ -1618,7 +1927,9 @@ function Page() {
                   fill="#292D32"
                 />
               </svg>
-              <p className="text-light-black text-base max-sm:text-xs">25+ Winning Awards</p>
+              <p className="text-light-black text-base max-sm:text-xs">
+                25+ Winning Awards
+              </p>
             </div>
             <div className="flex gap-0.5 max-sm:gap-0">
               <svg
