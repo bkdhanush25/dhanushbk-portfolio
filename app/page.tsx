@@ -56,26 +56,26 @@ function Page() {
   const [hoverHiremeButton, setHoverHiremeButton] = useState<Boolean>(false);
   const [hoverProfile2, setHoverProfile2] = useState<Boolean>(false);
   const [hoverProjectCard, setHoverProjectCard] = useState<Number>(0);
-  const [userMail, setUserMail] = useState('');
+  const [userMail, setUserMail] = useState("");
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('api/storeUserMail', {
-        method: 'POST',
+      const response = await fetch("api/storeUserMail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ userMail }),
       });
 
       if (response.ok) {
         const responseData = await response.json();
-        console.log('User mail stored successfully:', responseData);
+        console.log("User mail stored successfully:", responseData);
       } else {
-        console.error('Failed to store user mail:', response.statusText);
+        console.error("Failed to store user mail:", response.statusText);
       }
     } catch (error) {
-      console.error('Error storing user mail:', error);
+      console.error("Error storing user mail:", error);
     }
   };
 
@@ -153,9 +153,8 @@ function Page() {
                   fill="#344054"
                 />
               </svg>
-              <p className="text-xl max-sm:text-base font-medium max-sm:line-clamp-3 -z-20">
-                Jenny&apos;s Exceptional product design{" "}
-                <br className="max-sm:hidden" />
+              <p className="text-xl max-sm:text-base font-medium max-sm:line-clamp-3 -z-20 max-sm:w-36">
+                Dhanush&apos;s Smart work <br className="max-sm:hidden" />
                 ensure our website&apos;s success{" "}
                 <br className="max-sm:hidden" />
                 Highly Recommended
@@ -231,7 +230,7 @@ function Page() {
                 </svg>
               </div>
               <p className="text-5xl max-sm:text-2xl text-right font-bold">
-                10 Years
+                3+ Years
               </p>
               <p className="text-xl max-sm:text-base font-medium ml-auto">
                 Experience
@@ -244,10 +243,10 @@ function Page() {
       <div className="relative flex justify-center">
         <div className="absolute bottom-[-240px] max-sm:bottom-[-180px] -z-10">
           <Image
-            className=""
+            className="max-sm:w-60"
             src={Profile1}
-            width={700}
-            height={700}
+            width={450}
+            height={450}
             alt="profile1"
           />
         </div>
@@ -518,27 +517,27 @@ function Page() {
           {/* Company's section */}
           <div className="flex flex-col gap-20 text-right col-span-2">
             <div>
-              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
-                Cognizant, Mumbai
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+                Softrate India Pvt Limited
               </h4>
-              <p className="text-primary-gray text-2xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Sep 2016- July 2020
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
+                May 2021 - Jun 2021
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
-                Sugee Pvt limited, Mumbai
+              <h4 className="text-4xl max-sm:text-xl max-sm:mt-8 md:mt-16 lg:mt-0 text-light-black font-semibold">
+                Foyer Technology Pvt Limited
               </h4>
-              <p className="text-primary-gray text-2xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Sep 2020- July 2023
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
+                Dec 2022- Apr 2023
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
-                Cinetstox, Mumbai
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+                Travi Associate
               </h4>
-              <p className="text-primary-gray text-2xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Sep 2023
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
+                Oct 2023 - Present
               </p>
             </div>
           </div>
@@ -549,7 +548,7 @@ function Page() {
                 <p className="invisible">.</p>
               </div>
             </div>
-            <div className="h-28 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
+            <div className="lg:h-28 md:h-60 h-48 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
               <p className="invisible">.</p>
             </div>
             <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
@@ -557,7 +556,7 @@ function Page() {
                 <p className="invisible">.</p>
               </div>
             </div>
-            <div className="h-28 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
+            <div className="lg:h-28 md:h-48 h-40 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
               <p className="invisible">.</p>
             </div>
             <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
@@ -569,33 +568,38 @@ function Page() {
           {/* Role's section */}
           <div className="flex flex-col gap-8 col-span-2">
             <div>
-              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
-                Experince Designer
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+                Graphic Designer
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Lorem ipsum dolor sit amet, consectetur{" "}
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
+                Contributed to 15+ marketing campaigns by creating captivating
+                visual assets and collaborating with a dynamic design team.
+                {/* Lorem ipsum dolor sit amet, consectetur{" "}
                 <br className="lg:inline hidden" /> adipiscing elit. Duis lacus
                 nunc, posuere in justo <br className="lg:inline hidden" />{" "}
-                vulputate, bibendum sodales{" "}
+                vulputate, bibendum sodales{" "} */}
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
-                UI/UX Designer
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+                Front-end Web Developer
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Lorem ipsum dolor sit amet, consectetur{" "}
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
+                proficient in building responsive user interfaces with ReactJS
+                and Material UI for 3 diverse web projects.
+                {/* Lorem ipsum dolor sit amet, consectetur{" "}
                 <br className="lg:inline hidden" /> adipiscing elit. Duis lacus
                 nunc, posuere in justo <br className="lg:inline hidden" />{" "}
-                vulputate, bibendum sodales{" "}
+                vulputate, bibendum sodales{" "} */}
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-2xl text-light-black font-semibold">
-                Lead UX Designer
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+                Full Stack Web Developer
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Sep 2023
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
+                Contributed to projects using the MERN stack and Next.js.
+                Leveraging Prisma for efficient database interactions.
               </p>
             </div>
           </div>
@@ -630,8 +634,8 @@ function Page() {
           <m.div className="cursor-pointer z-20" whileHover={{ y: 10 }}>
             <Image
               src={Profile2}
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               alt="profile2"
               onMouseOver={() => {
                 setHoverProfile2(true);
@@ -648,15 +652,23 @@ function Page() {
             Why <span className="text-primary-color">Hire me</span>?
           </h4>
           <p className="text-primary-gray text-xl max-sm:text-base">
-            Lorem ipsum dolor sit amet, consectetur
+            As your dedicated freelancer, I bring a blend of trust, unwavering
+            quality,
+            <br className="max-sm:hidden" /> and seasoned experience to every
+            project. From full-stack marvels to the
+            <br className="max-sm:hidden" /> finesse of WordPress and Wix, rest
+            assured your vision is in capable hands,
+            <br className="max-sm:hidden" /> ready to transform into a digital
+            masterpiece.
+            {/* Lorem ipsum dolor sit amet, consectetur
             <br className="max-sm:hidden" /> adipiscing elit. Duis lacus nunc,
             posuere in justo
-            <br className="max-sm:hidden" /> vulputate, bibendum sodales{" "}
+            <br className="max-sm:hidden" /> vulputate, bibendum sodales{" "} */}
           </p>
           <div className="flex justify-between max-sm:justify-around">
             <div className="flex flex-col gap-2.5 max-sm:gap-0">
               <h5 className="text-4xl max-sm:text-xl font-medium flex">
-                <CountUp start={0} end={450} duration={4} />+
+                <CountUp start={0} end={5} duration={4} />+
               </h5>
               <p className="text-gray-500 text-xl max-sm:text-base">
                 Project Completed
@@ -664,10 +676,10 @@ function Page() {
             </div>
             <div className="flex flex-col gap-2.5 max-sm:gap-0">
               <h5 className="text-4xl max-sm:text-xl font-medium flex">
-                <CountUp start={0} end={450} duration={4} />+
+                <CountUp start={0} end={10} duration={4} />+
               </h5>
               <p className="text-gray-500 text-xl max-sm:text-base">
-                Project Completed
+                Clients Engaged
               </p>
             </div>
           </div>
@@ -684,7 +696,7 @@ function Page() {
         <div className="flex justify-between items-center">
           <h4 className="text-light-black lg:text-6xl text-3xl md:text-4xl font-semibold">
             Lets have a look at
-            <br />
+            <br className="max-sm:hidden"/>{" "}
             my <span className="text-primary-color">Projects</span>
           </h4>
           <div className="items-center">
@@ -753,11 +765,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 1
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -814,11 +827,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 2
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -875,11 +889,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 3
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -936,11 +951,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 4
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -997,11 +1013,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 5
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -1058,11 +1075,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 6
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -1119,11 +1137,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 7
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -1180,11 +1199,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 8
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -1241,11 +1261,12 @@ function Page() {
               </AnimatePresence>
             </div>
             <div
-            className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 9
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
-              }`}>
+              }`}
+            >
               <svg
                 width="34"
                 height="34"
@@ -1272,11 +1293,15 @@ function Page() {
             Speak to <span className="text-primary-color">My Results</span>
           </h3>
           <p className="text-xl font-medium text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
+            Incredible experience working with you — their expertise,
+            dedication,<br className="max-sm:hidden" /> and attention to detail exceeded our expectations.
+            Trustworthy and<br className="max-sm:hidden" /> professional, they truly transformed our vision into
+            a digital reality.
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
             interdum <br className="max-sm:hidden" />
             ligula a dignissim. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed <br className="max-sm:hidden" />
-            lobortis orci elementum egestas lobortis.
+            lobortis orci elementum egestas lobortis. */}
           </p>
         </div>
         {/* Carousel section */}
@@ -1893,7 +1918,10 @@ function Page() {
                 fill="#FD853A"
               />
             </svg>
-            <button onClick={handleSubmit} className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
+            <button
+              onClick={handleSubmit}
+              className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color"
+            >
               Send
             </button>
             <input
