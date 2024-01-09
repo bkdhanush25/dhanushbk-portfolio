@@ -381,9 +381,10 @@ function Page() {
             My <span className="text-primary-color">Services</span>
           </h3>
           <p className="text-right max-sm:text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+          From WordPress wonders to custom-coded brilliance, offering a spectrum<br className="max-sm:hidden" />{" "}of web development services for a digital experience like no other.
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
             <br className="max-sm:hidden" /> lacus nunc, posuere in justo
-            vulputate, bibendum sodales{" "}
+            vulputate, bibendum sodales{" "} */}
           </p>
         </div>
         {/* Carasouel section */}

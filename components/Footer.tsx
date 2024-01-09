@@ -51,10 +51,11 @@ const Footer = () => {
           </m.div>
           </Link>
 
-          <p className="text-xl max-sm:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
+          <p className="text-lg max-sm:text-base">
+          Thank you sincerely for the wonderful opportunity to work together. It has been a privilege contributing to your project, and I am genuinely grateful for the trust you've placed in my skills. Your support and collaboration have made this experience truly rewarding, and I look forward to continued success together.
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
             interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Sed lobortis orci elementum egestas lobortis.
+            adipiscing elit. Sed lobortis orci elementum egestas lobortis. */}
           </p>
           <div className="flex mt-5 gap-2 mb-5">
             <m.svg
