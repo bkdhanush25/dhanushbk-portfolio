@@ -52,7 +52,7 @@ const Footer = () => {
           </Link>
 
           <p className="text-lg max-sm:text-base">
-          Thank you sincerely for the wonderful opportunity to work together. It has been a privilege contributing to your project, and I am genuinely grateful for the trust you've placed in my skills. Your support and collaboration have made this experience truly rewarding, and I look forward to continued success together.
+          Thank you sincerely for the wonderful opportunity to work together. It has been a privilege contributing to your project, and I am genuinely grateful for the trust you&apos;e placed in my skills. Your support and collaboration have made this experience truly rewarding, and I look forward to continued success together.
             {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
             interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed lobortis orci elementum egestas lobortis. */}
