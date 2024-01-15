@@ -12,6 +12,7 @@ import Image from "next/image";
 import CountUp from "react-countup";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Link from "next/link";
 
 const responsive = {
   superLargeDesktop: {
@@ -78,6 +79,8 @@ function Page() {
       console.error("Error storing user mail:", error);
     }
   };
+
+  const [hoverService, setHoverService] = useState<Number>(2);
 
   return (
     <div>
@@ -381,7 +384,10 @@ function Page() {
             My <span className="text-primary-color">Services</span>
           </h3>
           <p className="text-right max-sm:text-center">
-          From WordPress wonders to custom-coded brilliance, offering a spectrum<br className="max-sm:hidden" />{" "}of web development services for a digital experience like no other.
+            From WordPress wonders to custom-coded brilliance, offering a
+            spectrum
+            <br className="max-sm:hidden" /> of web development services for a
+            digital experience like no other.
             {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
             <br className="max-sm:hidden" /> lacus nunc, posuere in justo
             vulputate, bibendum sodales{" "} */}
@@ -389,9 +395,29 @@ function Page() {
         </div>
         {/* Carasouel section */}
         <div className="flex justify-between md:justify-around md:gap-y-10 gap-y-5 flex-wrap lg:mt-24 mt-10 md:mt-16">
-          <div className="border border-white rounded-[35px] backdrop-blur-sm text-white">
-            <h4 className="text-3xl font-medium mt-11 ml-9">UI/UX design</h4>
-            <hr className="opacity-50 my-6" />
+          <m.div
+            whileHover={{ scale: 1.05 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+            className="border border-white rounded-[35px] backdrop-blur-sm text-white cursor-pointer"
+            onMouseOver={() => {
+              setHoverService(1);
+            }}
+            onMouseOut={() => {
+              setHoverService(2);
+            }}
+          >
+            <h4
+              className={`text-3xl font-medium pt-11 pl-9 pb-6 rounded-t-[35px]  ${
+                hoverService == 1 ? "bg-primary-color duration-200" : ""
+              }`}
+            >
+              Wordpress Dev
+            </h4>
+            <hr className="opacity-50 mb-12" />
             <div className="relative flex">
               <Image
                 className="pt-5 md:w-80 lg:w-full"
@@ -400,7 +426,11 @@ function Page() {
                 height={400}
                 alt="my-services-1"
               />
-              <div className="absolute right-3 bottom-3 bg-light-black rounded-full text-white duration-150 cursor-pointer hover:bg-primary-color">
+              <div
+                className={`absolute right-3 bottom-3 bg-light-black rounded-full text-white cursor-pointer ${
+                  hoverService == 1 ? "bg-primary-color duration-150" : ""
+                }`}
+              >
                 <svg
                   className="p-2"
                   width="73"
@@ -426,10 +456,30 @@ function Page() {
                 </svg>
               </div>
             </div>
-          </div>
-          <div className="border border-white rounded-[35px] backdrop-blur-sm text-white">
-            <h4 className="text-3xl font-medium mt-11 ml-9">UI/UX design</h4>
-            <hr className="opacity-50 my-6" />
+          </m.div>
+          <m.div
+            whileHover={{ scale: 1.05 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+            className="border border-white rounded-[35px] backdrop-blur-sm text-white cursor-pointer"
+            onMouseOver={() => {
+              setHoverService(2);
+            }}
+            onMouseOut={() => {
+              setHoverService(2);
+            }}
+          >
+            <h4
+              className={`text-3xl font-medium pt-11 pl-9 pb-6 rounded-t-[35px]  ${
+                hoverService == 2 ? "bg-primary-color duration-200" : ""
+              }`}
+            >
+              Full-Stack Web Dev
+            </h4>
+            <hr className="opacity-50 mb-12" />
             <div className="relative flex">
               <Image
                 className="pt-5 md:w-80 lg:w-full"
@@ -438,7 +488,11 @@ function Page() {
                 height={400}
                 alt="my-services-1"
               />
-              <div className="absolute right-3 bottom-3 bg-light-black rounded-full text-white duration-150 cursor-pointer hover:bg-primary-color">
+              <div
+                className={`absolute right-3 bottom-3 bg-light-black rounded-full text-white cursor-pointer ${
+                  hoverService == 2 ? "bg-primary-color duration-150" : ""
+                }`}
+              >
                 <svg
                   className="p-2"
                   width="73"
@@ -464,10 +518,28 @@ function Page() {
                 </svg>
               </div>
             </div>
-          </div>
-          <div className="border border-white rounded-[35px] backdrop-blur-sm text-white">
-            <h4 className="text-3xl font-medium mt-11 ml-9">UI/UX design</h4>
-            <hr className="opacity-50 my-6" />
+          </m.div>
+          <m.div
+            whileHover={{ scale: 1.05 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+            className="border border-white rounded-[35px] backdrop-blur-sm text-white cursor-pointer"
+            onMouseOver={() => {
+              setHoverService(3);
+            }}
+            onMouseOut={() => {
+              setHoverService(2);
+            }}
+          >
+            <h4
+              className={`text-3xl font-medium pt-11 pl-9 pb-6 rounded-t-[35px]  ${
+                hoverService == 3 ? "bg-primary-color duration-200" : ""
+              }`}
+            >App Dev</h4>
+            <hr className="opacity-50 mb-12" />
             <div className="relative flex">
               <Image
                 className="pt-5 md:w-80 lg:w-full"
@@ -476,7 +548,11 @@ function Page() {
                 height={400}
                 alt="my-services-1"
               />
-              <div className="absolute right-3 bottom-3 bg-light-black rounded-full text-white duration-150 cursor-pointer hover:bg-primary-color">
+              <div
+                className={`absolute right-3 bottom-3 bg-light-black rounded-full text-white cursor-pointer ${
+                  hoverService == 3 ? "bg-primary-color duration-150" : ""
+                }`}
+              >
                 <svg
                   className="p-2"
                   width="73"
@@ -502,7 +578,7 @@ function Page() {
                 </svg>
               </div>
             </div>
-          </div>
+          </m.div>
         </div>
       </div>
       {/* My work experience section */}
@@ -697,8 +773,8 @@ function Page() {
         <div className="flex justify-between items-center">
           <h4 className="text-light-black lg:text-6xl text-3xl md:text-4xl font-semibold">
             Lets have a look at
-            <br className="max-sm:hidden"/>{" "}
-            my <span className="text-primary-color">Projects</span>
+            <br className="max-sm:hidden" /> my{" "}
+            <span className="text-primary-color">Projects</span>
           </h4>
           <div className="items-center">
             <button className="text-white text-xl max-sm:text-base font-bold lg:px-10 lg:py-5 px-5 py-2.5 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
@@ -1294,10 +1370,12 @@ function Page() {
             Speak to <span className="text-primary-color">My Results</span>
           </h3>
           <p className="text-xl font-medium text-white">
-            Incredible experience working with you — their expertise,
-            dedication,<br className="max-sm:hidden" /> and attention to detail exceeded our expectations.
-            Trustworthy and<br className="max-sm:hidden" /> professional, they truly transformed our vision into
-            a digital reality.
+            Incredible experience working with you - their expertise,
+            dedication,
+            <br className="max-sm:hidden" /> and attention to detail exceeded
+            our expectations. Trustworthy and
+            <br className="max-sm:hidden" /> professional, they truly
+            transformed our vision into a digital reality.
             {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
             interdum <br className="max-sm:hidden" />
             ligula a dignissim. Lorem ipsum dolor sit amet, consectetur
@@ -1919,12 +1997,17 @@ function Page() {
                 fill="#FD853A"
               />
             </svg>
-            <button
-              onClick={handleSubmit}
-              className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color"
+            <Link
+              href="https://www.mailto:dhanushbk.freelancer@gmail.com"
+              target="_blank"
             >
-              Send
-            </button>
+              <button
+                onClick={handleSubmit}
+                className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color"
+              >
+                Send
+              </button>
+            </Link>
             <input
               type="text"
               className="rounded-full w-[750px] max-sm:w-full max-sm:h-14 h-16 pl-16 max-sm:pl-12 min-w-[300px]"
