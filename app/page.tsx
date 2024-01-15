@@ -388,9 +388,6 @@ function Page() {
             spectrum
             <br className="max-sm:hidden" /> of web development services for a
             digital experience like no other.
-            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            <br className="max-sm:hidden" /> lacus nunc, posuere in justo
-            vulputate, bibendum sodales{" "} */}
           </p>
         </div>
         {/* Carasouel section */}
@@ -651,10 +648,6 @@ function Page() {
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
                 Contributed to 15+ marketing campaigns by creating captivating
                 visual assets and collaborating with a dynamic design team.
-                {/* Lorem ipsum dolor sit amet, consectetur{" "}
-                <br className="lg:inline hidden" /> adipiscing elit. Duis lacus
-                nunc, posuere in justo <br className="lg:inline hidden" />{" "}
-                vulputate, bibendum sodales{" "} */}
               </p>
             </div>
             <div>
@@ -664,10 +657,6 @@ function Page() {
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
                 proficient in building responsive user interfaces with ReactJS
                 and Material UI for 3 diverse web projects.
-                {/* Lorem ipsum dolor sit amet, consectetur{" "}
-                <br className="lg:inline hidden" /> adipiscing elit. Duis lacus
-                nunc, posuere in justo <br className="lg:inline hidden" />{" "}
-                vulputate, bibendum sodales{" "} */}
               </p>
             </div>
             <div>
@@ -776,11 +765,11 @@ function Page() {
             <br className="max-sm:hidden" /> my{" "}
             <span className="text-primary-color">Projects</span>
           </h4>
-          <div className="items-center">
+          {/* <div className="items-center">
             <button className="text-white text-xl max-sm:text-base font-bold lg:px-10 lg:py-5 px-5 py-2.5 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color">
               See All
             </button>
-          </div>
+          </div> */}
         </div>
         {/* Carousel Section */}
         <Carousel
@@ -801,8 +790,9 @@ function Page() {
           itemClass="carousel-item-padding-40-px mb-10"
           className="mb-10 lg:pl-20 pl-2 py-12 max-sm:pt-6 max-sm:pb-0 relative"
         >
+          {/* Project 1 Bode mockup */}
           <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-bode-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(1);
             }}
@@ -818,7 +808,7 @@ function Page() {
               }`}
             >
               <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
+              #Project 1
               </h5>
               <AnimatePresence>
                 {hoverProjectCard == 1 && (
@@ -832,10 +822,7 @@ function Page() {
                     }}
                   >
                     <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
+                    Proudly unveiling a sleek gym website, blending style and functionality seamlessly, to enhance user experience and showcase the fitness center&apos;s offerings with flair. Our commitment to excellence shines through, creating a dynamic online space that truly represents the client&apos;s fitness vision
                     </p>
                   </m.div>
                 )}
@@ -863,8 +850,9 @@ function Page() {
               </svg>
             </div>
           </div>
+          {/* Project 2 Recomflix mockup */}
           <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-recomflix-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(2);
             }}
@@ -880,7 +868,7 @@ function Page() {
               }`}
             >
               <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
+              #Project 2
               </h5>
               <AnimatePresence>
                 {hoverProjectCard == 2 && (
@@ -894,10 +882,7 @@ function Page() {
                     }}
                   >
                     <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
+                    Excited to unveil my client&apos;s frontend movie website, blending creativity and functionality seamlessly. From captivating UI to seamless navigation, it&apos;s now an engaging platform for movie enthusiasts, bringing my client&apos;s vision to life!
                     </p>
                   </m.div>
                 )}
@@ -925,8 +910,9 @@ function Page() {
               </svg>
             </div>
           </div>
+          {/* Project 3 Freakmillionaire mockup */}
           <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-freakmillionaire-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(3);
             }}
@@ -942,7 +928,7 @@ function Page() {
               }`}
             >
               <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
+              #Project 3
               </h5>
               <AnimatePresence>
                 {hoverProjectCard == 3 && (
@@ -956,10 +942,7 @@ function Page() {
                     }}
                   >
                     <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
+                    Presenting my client&apos;s blog haven, where sleek design meets seamless functionality, creating an engaging space for sharing ideas. Thrilled to have transformed their vision into a visually captivating and user-friendly online experience!
                     </p>
                   </m.div>
                 )}
@@ -987,8 +970,9 @@ function Page() {
               </svg>
             </div>
           </div>
+          {/* Project 3 nwglobal mockup */}
           <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-nwmglobal-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(4);
             }}
@@ -1004,7 +988,7 @@ function Page() {
               }`}
             >
               <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
+              #Project 4
               </h5>
               <AnimatePresence>
                 {hoverProjectCard == 4 && (
@@ -1018,10 +1002,7 @@ function Page() {
                     }}
                   >
                     <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
+                    Proud to share the successful completion of our latest project—a client&apos;s webinar website that seamlessly blends functionality and aesthetic appeal. From user-friendly interfaces to robust backend systems, the result is a dynamic platform that elevates the client&apos;s webinar experience. Thrilled to have played a part in bringing their vision to life!
                     </p>
                   </m.div>
                 )}
@@ -1049,8 +1030,9 @@ function Page() {
               </svg>
             </div>
           </div>
+          {/* Project 5 Prime industry mockup */}
           <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-primeindustry-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(5);
             }}
@@ -1066,7 +1048,7 @@ function Page() {
               }`}
             >
               <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
+                #Project 5
               </h5>
               <AnimatePresence>
                 {hoverProjectCard == 5 && (
@@ -1080,10 +1062,7 @@ function Page() {
                     }}
                   >
                     <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
+                    Introducing my client&apos;s cutting-edge power plant industry website, a fusion of innovation and precision in a visually stunning interface. Seamlessly blending robust functionality, it stands as a dynamic testament to the industry&apos;s expertise—a digital masterpiece brought to life with pride!
                     </p>
                   </m.div>
                 )}
@@ -1092,254 +1071,6 @@ function Page() {
             <div
               className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
                 hoverProjectCard == 5
-                  ? "text-white bg-primary-color duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <svg
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="p-1"
-              >
-                <path
-                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
-            onMouseOver={() => {
-              setHoverProjectCard(6);
-            }}
-            onMouseOut={() => {
-              setHoverProjectCard(0);
-            }}
-          >
-            <div
-              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
-                hoverProjectCard == 6
-                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
-              </h5>
-              <AnimatePresence>
-                {hoverProjectCard == 6 && (
-                  <m.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100 }}
-                    transition={{
-                      duration: 0.2,
-                      transition: { duration: 0.1 },
-                    }}
-                  >
-                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
-                    </p>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <div
-              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
-                hoverProjectCard == 6
-                  ? "text-white bg-primary-color duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <svg
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="p-1"
-              >
-                <path
-                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
-            onMouseOver={() => {
-              setHoverProjectCard(7);
-            }}
-            onMouseOut={() => {
-              setHoverProjectCard(0);
-            }}
-          >
-            <div
-              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
-                hoverProjectCard == 7
-                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
-              </h5>
-              <AnimatePresence>
-                {hoverProjectCard == 7 && (
-                  <m.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100 }}
-                    transition={{
-                      duration: 0.2,
-                      transition: { duration: 0.1 },
-                    }}
-                  >
-                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
-                    </p>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <div
-              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
-                hoverProjectCard == 7
-                  ? "text-white bg-primary-color duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <svg
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="p-1"
-              >
-                <path
-                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
-            onMouseOver={() => {
-              setHoverProjectCard(8);
-            }}
-            onMouseOut={() => {
-              setHoverProjectCard(0);
-            }}
-          >
-            <div
-              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
-                hoverProjectCard == 8
-                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
-              </h5>
-              <AnimatePresence>
-                {hoverProjectCard == 8 && (
-                  <m.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100 }}
-                    transition={{
-                      duration: 0.2,
-                      transition: { duration: 0.1 },
-                    }}
-                  >
-                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
-                    </p>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <div
-              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
-                hoverProjectCard == 8
-                  ? "text-white bg-primary-color duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <svg
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="p-1"
-              >
-                <path
-                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-product-image1 rounded-[20px] bg-cover bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
-            onMouseOver={() => {
-              setHoverProjectCard(9);
-            }}
-            onMouseOut={() => {
-              setHoverProjectCard(0);
-            }}
-          >
-            <div
-              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
-                hoverProjectCard == 9
-                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                Lirante
-              </h5>
-              <AnimatePresence>
-                {hoverProjectCard == 9 && (
-                  <m.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100 }}
-                    transition={{
-                      duration: 0.2,
-                      transition: { duration: 0.1 },
-                    }}
-                  >
-                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed congue interdum ligula a dignissim. Lorem ipsum dolor
-                      sit amet, consectetur adipiscing elit. Sed lobortis orci
-                      elementum egestas lobortis.
-                    </p>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <div
-              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
-                hoverProjectCard == 9
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
               }`}

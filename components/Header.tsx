@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div>
       {/* Mobile hamburger menu */}
-      <div className="hidden max-sm:flex justify-end m-2">
+      {/* <div className="hidden max-sm:flex justify-end m-2">
         <div className="inline-block text-white bg-primary-color hover:bg-light-black p-1 rounded-lg justify-self-end">
           <svg
             width="24"
@@ -39,7 +39,7 @@ const Header = () => {
             />
           </svg>
         </div>
-      </div>
+      </div> */}
       {/* Nabigation bar */}
       <div className="rounded-full bg-light-black sm:mx-2 lg:mx-[10%] hidden sm:flex  p-1 text-white mt-2 justify-between text-base items-center">
         <m.div
