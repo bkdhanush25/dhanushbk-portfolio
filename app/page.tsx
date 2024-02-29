@@ -59,26 +59,24 @@ function Page() {
   const [hoverHiremeButton, setHoverHiremeButton] = useState<Boolean>(false);
   const [hoverProfile2, setHoverProfile2] = useState<Boolean>(false);
   const [hoverProjectCard, setHoverProjectCard] = useState<Number>(0);
-  const [userMail, setUserMail] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("api/storeUserMail", {
+      const response = await fetch("/api/usermail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ userMail }),
+        body: JSON.stringify({ email }),
       });
-
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log("User mail stored successfully:", responseData);
-      } else {
-        console.error("Failed to store user mail:", response.statusText);
-      }
+      // Handle response as needed
     } catch (error) {
-      console.error("Error storing user mail:", error);
+      console.error("Error:", error);
     }
   };
 
@@ -1267,8 +1265,9 @@ function Page() {
               <p className="text-xl">
                 Absolutely blown away by the web development services provided!
                 The transformation of our ideas into a visually stunning and
-                functional website exceeded all expectations. This freelancer&apos;s
-                dedication and creativity truly set a new standard.
+                functional website exceeded all expectations. This
+                freelancer&apos;s dedication and creativity truly set a new
+                standard.
               </p>
             </div>
             <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
@@ -1382,8 +1381,8 @@ function Page() {
                 A big thank you to the freelancer who brought our vision to life
                 through impeccable web development. The seamless blend of
                 functionality and aesthetics reflects not just technical
-                expertise but a deep understanding of our brand. Couldn&apos;t be
-                happier with the result!
+                expertise but a deep understanding of our brand. Couldn&apos;t
+                be happier with the result!
               </p>
             </div>
             <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
@@ -1497,7 +1496,8 @@ function Page() {
                 Grateful for the incredible web development work delivered by
                 this freelancer. The website they crafted is more than just
                 code; it&apos;s a testament to their commitment, skill, and the
-                ability to infuse emotion into every element. Highly recommended!!
+                ability to infuse emotion into every element. Highly
+                recommended!!
               </p>
             </div>
           </Carousel>
@@ -1524,22 +1524,23 @@ function Page() {
                 fill="#FD853A"
               />
             </svg>
-            <Link
+            {/* <Link
               href="https://www.mailto:dhanushbk.freelancer@gmail.com"
               target="_blank"
-            >
+            > */}
               <button
-                onClick={handleSubmit}
+                 onClick={handleSubmit}
                 className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color"
               >
                 Send
               </button>
-            </Link>
+            {/* </Link> */}
             <input
               type="text"
               className="rounded-full w-[750px] max-sm:w-full max-sm:h-14 h-16 pl-16 max-sm:pl-12 min-w-[300px]"
               placeholder="Enter Email Address"
-              onChange={(e) => setUserMail(e.target.value)}
+              value={email}
+              onChange={handleInputChange}
             />
           </div>
           <div className="flex justify-between lg:mx-96 mx-2 mt-1.5">
