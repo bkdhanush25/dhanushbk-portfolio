@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import React from 'react'
+import DhanushResume from '@/public/dhanush-resume.png'
 export const metadata ={
   title: 'Resume'
 }
@@ -6,7 +8,7 @@ export const metadata ={
 function page() {
   return (
     <div>
-      Resume
+     <Image width={100} height={100} src={DhanushResume} alt="dhanush-resume" className='w-[100vw] h-[280vh]' unoptimized/>
     </div>
   )
 }
