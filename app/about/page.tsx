@@ -34,8 +34,8 @@ function page() {
             technologies. Passionate on Startup and having hungry mindset to
             take Entrepreneurship in future. I am the person who is aware and
             curious about emerging technologies. I am self-motivated person who
-            loves to inspire people and motivates through the quote ,"STAY
-            HUNGRY, STAY FOOLISH" .
+            loves to inspire people and motivates through the quote ,&quot;STAY
+            HUNGRY, STAY FOOLISH&quot; .
           </p>
           <div>
             <div className="flex mt-5 items-end">

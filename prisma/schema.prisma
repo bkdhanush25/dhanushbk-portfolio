@@ -18,9 +18,10 @@ model User {
 model Blog {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   blogTitle String
+  blogBannerImage String?
   blogContent String
   category String[]
-  author String
-  likes Int?
+  blogAuthor String
+  likes Int @default(0)
   comments String[]
 }
