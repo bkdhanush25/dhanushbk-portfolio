@@ -2,8 +2,11 @@
 import React from "react";
 import Link from "next/link";
 import { motion as m } from "framer-motion";
+import { useNavigation } from "@/store/dataStore";
 
 const Header = () => {
+
+  const [selectNav, setSelectNav] = useNavigation((state) => [state.selectNav, state.setSelectNav]);
   return (
     <div>
       {/* Mobile hamburger menu */}
@@ -44,7 +47,8 @@ const Header = () => {
       <div className="rounded-full bg-light-black sm:mx-2 lg:mx-[10%] hidden sm:flex  p-1 text-white mt-2 justify-between text-base items-center">
         <m.div
           whileHover={{ scale: 1.1 }}
-          className="px-6 lg:px-8 py-2 cursor-pointer bg-primary-color hover:bg-hover-black rounded-full"
+          className={`px-6 lg:px-8 py-2 cursor-pointer rounded-full ${selectNav === "Home"? "bg-primary-color" : ""}`}
+          onClick={() => setSelectNav("Home")}
         >
           <Link href="/" className="font-bold">
             Home
@@ -52,17 +56,19 @@ const Header = () => {
         </m.div>
         <m.div
           whileHover={{ scale: 1.1 }}
-          className="px-6 lg:px-8 py-2 cursor-pointer rounded-full hover:bg-hover-black"
+          className={`px-6 lg:px-8 py-2 cursor-pointer rounded-full ${selectNav === "About"? "bg-primary-color" : ""}`}
+          onClick={() => setSelectNav("About")}
         >
           <Link href="/about">About</Link>
         </m.div>
         <m.div
           whileHover={{ scale: 1.1 }}
-          className="px-6 lg:px-8 py-2 cursor-pointer rounded-full hover:bg-hover-black"
+          className={`px-6 lg:px-8 py-2 cursor-pointer rounded-full ${selectNav === "Blogs"? "bg-primary-color" : ""}`}
+          onClick={() => setSelectNav("Blogs")}
         >
-          <Link href="/services">Services</Link>
+          <Link href="/blogs">Blogs</Link>
         </m.div>
-        <m.div whileHover={{ scale: 1.1 }}>
+        <m.div>
           <Link href="/" className="flex items-center gap-1 cursor-pointer">
             <h2 className="bg-primary-color px-1.5 py-1 rounded-full font-bold text-lg">
               BK
@@ -72,19 +78,22 @@ const Header = () => {
         </m.div>
         <m.div
           whileHover={{ scale: 1.1 }}
-          className="px-6 lg:px-8 py-2 cursor-pointer rounded-full hover:bg-hover-black"
+          className={`px-6 lg:px-8 py-2 cursor-pointer rounded-full ${selectNav === "Resume"? "bg-primary-color" : ""}`}
+          onClick={() => setSelectNav("Resume")}
         >
           <Link href="/resume">Resume</Link>
         </m.div>
         <m.div
           whileHover={{ scale: 1.1 }}
-          className="px-6 lg:px-8 py-2 cursor-pointer rounded-full hover:bg-hover-black"
+          className={`px-6 lg:px-8 py-2 cursor-pointer rounded-full ${selectNav === "Projects"? "bg-primary-color" : ""}`}
+          onClick={() => setSelectNav("Projects")}
         >
           <Link href="/projects">Projects</Link>
         </m.div>
         <m.div
           whileHover={{ scale: 1.1 }}
-          className="px-6 lg:px-8 py-2 cursor-pointer rounded-full hover:bg-hover-black"
+          className={`px-6 lg:px-8 py-2 cursor-pointer rounded-full ${selectNav === "Contact"? "bg-primary-color" : ""}`}
+          onClick={() => setSelectNav("Contact")}
         >
           <Link href="/contact">Contact</Link>
         </m.div>

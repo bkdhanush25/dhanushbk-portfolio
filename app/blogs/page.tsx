@@ -1,11 +1,11 @@
 import React from 'react'
 export const metadata ={
-  title: 'Services'
+  title: 'Blogs'
 }
 
 function page() {
   return (
-    <div>services</div>
+    <div>Blogs</div>
   )
 }
 

@@ -74,6 +74,8 @@ function Page() {
         },
         body: JSON.stringify({ email }),
       });
+      setEmail("");
+      alert("you're email has been added to the list!!!");
       // Handle response as needed
     } catch (error) {
       console.error("Error:", error);
