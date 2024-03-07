@@ -8,7 +8,7 @@ export const metadata ={
 function page() {
   return (
     <div>
-     <Image width={100} height={100} src={DhanushResume} alt="dhanush-resume" className='w-[100vw] h-[280vh]' unoptimized/>
+     <Image width={100} height={100} src={DhanushResume} alt="dhanush-resume" className='w-[100vw] h-[200vw]' unoptimized/>
     </div>
   )
 }
