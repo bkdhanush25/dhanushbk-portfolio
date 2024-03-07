@@ -7,7 +7,6 @@ export async function GET(request: Request) {
   try {
     const blogs = await prisma.blog.findMany();
     // Return the fetched blogs as a response
-    console.log(blogs);
     return NextResponse.json(blogs);
   } catch (error) {
     // Handle any errors and return an error response

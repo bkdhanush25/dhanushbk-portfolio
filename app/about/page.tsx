@@ -8,14 +8,14 @@ export const metadata = {
 function page() {
   return (
     <div className="py-[50px] max-sm:py-[90px] px-3 md:px-5 lg:px-20">
-      <div className="lg:grid grid-cols-2 gap-2">
+      <div className="lg:grid grid-cols-2 min-gap-2">
         <div className="col-span-1 flex justify-center">
           <Image
             width={100}
             height={100}
             src={ClgImage}
             alt="College-Image"
-            className="w-[500px] rounded-[26px]"
+            className="w-[500px] h-fit rounded-[26px]"
             unoptimized
           />
         </div>
