@@ -78,7 +78,7 @@ const Blogs = () => {
             <p>{blog.blogAuthor}</p>
           </li>
         ))} */}
-        <li className="lg:flex justify-center gap-5">
+        <li className="lg:flex justify-center gap-5 p-5 rounded-3xl cursor-pointer hover:bg-zinc-100">
           <div className="w-full mb-2 flex justify-center">
             <Image
               width={100}
@@ -125,13 +125,13 @@ const Blogs = () => {
               {/* Categories */}
               <div>
                 <ul className="flex gap-2">
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Lifestyle
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Pets & animals
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Fun & Entertainment
                   </li>
                 </ul>
@@ -178,7 +178,7 @@ const Blogs = () => {
             </div>
           </div>
         </li>
-        <li className="lg:flex justify-center gap-5">
+        <li className="lg:flex justify-center gap-5 p-5 rounded-3xl cursor-pointer hover:bg-zinc-100">
           <div className="w-full mb-2 flex justify-center">
             <Image
               width={100}
@@ -225,13 +225,13 @@ const Blogs = () => {
               {/* Categories */}
               <div>
                 <ul className="flex gap-2">
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Lifestyle
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Pets & animals
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Fun & Entertainment
                   </li>
                 </ul>
@@ -278,7 +278,7 @@ const Blogs = () => {
             </div>
           </div>
         </li>
-        <li className="lg:flex justify-center gap-5">
+        <li className="lg:flex justify-center gap-5 p-5 rounded-3xl cursor-pointer hover:bg-zinc-100">
           <div className="w-full mb-2 flex justify-center">
             <Image
               width={100}
@@ -325,13 +325,13 @@ const Blogs = () => {
               {/* Categories */}
               <div>
                 <ul className="flex gap-2">
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Lifestyle
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Pets & animals
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Fun & Entertainment
                   </li>
                 </ul>
@@ -378,7 +378,7 @@ const Blogs = () => {
             </div>
           </div>
         </li>
-        <li className="lg:flex justify-center gap-5">
+        <li className="lg:flex justify-center gap-5 p-5 rounded-3xl cursor-pointer hover:bg-zinc-100">
           <div className="w-full mb-2 flex justify-center">
             <Image
               width={100}
@@ -425,13 +425,13 @@ const Blogs = () => {
               {/* Categories */}
               <div>
                 <ul className="flex gap-2">
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Lifestyle
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Pets & animals
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Fun & Entertainment
                   </li>
                 </ul>
@@ -478,7 +478,7 @@ const Blogs = () => {
             </div>
           </div>
         </li>
-        <li className="lg:flex justify-center gap-5">
+        <li className="lg:flex justify-center gap-5 p-5 rounded-3xl cursor-pointer hover:bg-zinc-100">
           <div className="w-full mb-2 flex justify-center">
             <Image
               width={100}
@@ -525,13 +525,13 @@ const Blogs = () => {
               {/* Categories */}
               <div>
                 <ul className="flex gap-2">
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Lifestyle
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Pets & animals
                   </li>
-                  <li className="bg-zinc-100 rounded-full px-3 py-1 text-center items-center flex">
+                  <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     Fun & Entertainment
                   </li>
                 </ul>
