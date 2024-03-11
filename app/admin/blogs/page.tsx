@@ -1,8 +1,19 @@
-import React from 'react'
-import AdminBlogs from '@/components/AdminBlogs'
+"use client"
+import React from 'react';
+import AdminBlogs from '@/components/AdminBlogs';
+import { useAuth } from "@/store/dataStore";
+
 const page = () => {
+
+  const [isLoggedIn, setIsLoggedIn] = useAuth((state) => [
+    state.isLoggedIn,
+    state.setIsLoggedIn,
+  ]);
+  
   return (
-    <div><AdminBlogs/></div>
+    <>
+    {isLoggedIn?(<div><AdminBlogs/></div>):(<div>Do not Access</div>)}
+    </>
   )
 }
 

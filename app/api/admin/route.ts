@@ -4,13 +4,9 @@ import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
 // @ts-ignore
 import CryptoJS from "crypto-js";
-import { useAuth } from "@/store/dataStore";
 
 const prisma = new PrismaClient();
-// const [isLoggedIn, setIsLoggedIn] = useAuth((state) => [
-//     state.isLoggedIn,
-//     state.setIsLoggedIn,
-//   ]);
+
 
 // Define interfaces for request data
 interface LoginData {

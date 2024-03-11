@@ -42,7 +42,7 @@ const CreateBlog = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     try {
-      const response = await fetch("/api/blog", {
+      const response = await fetch("/api/admin/blog", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

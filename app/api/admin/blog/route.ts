@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-//GET BLOG
+//GET ALL BLOG
 export async function GET(request: Request) {
   try {
     const blogs = await prisma.blog.findMany();
@@ -18,16 +18,15 @@ export async function GET(request: Request) {
 
 
 //POST BLOG
-// export async function POST(request: Request) {
-//   try {
-//     const data = await request.json();
-//     const newBlog = await prisma.blog.create({
-//       data: data,
-//     });
-//     return NextResponse.json(newBlog);
-//   } catch (err) {
-//     console.log("here is error" + err);
-//     return NextResponse.json(err);
-//   }
-// }
-
+export async function POST(request: Request) {
+  try {
+    const data = await request.json();
+    const newBlog = await prisma.blog.create({
+      data: data,
+    });
+    return NextResponse.json(newBlog);
+  } catch (err) {
+    console.log("here is error" + err);
+    return NextResponse.json(err);
+  }
+}
