@@ -75,7 +75,7 @@ const Blogs = () => {
   setComments(blog.comments)
   setCreatedAt(blog.createdAt)
   router.push(`/blogs/${blog.blogTitle}`);
-}} className="lg:flex justify-center gap-5 p-5 rounded-3xl group cursor-pointer hover:bg-zinc-100">
+}} className="lg:flex justify-center gap-5 p-5 rounded-3xl group cursor-pointer hover:bg-zinc-100" key={blog.id}>
             <div className="w-full mb-2 flex justify-center">
               <Image
                 width={100}
@@ -104,7 +104,7 @@ const Blogs = () => {
                 <div>
                   <ul className="flex gap-2">
                     {blog.category.map((item) => (
-                      <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
+                      <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex" key={item}>
                         {item}
                       </li>
                     ))}

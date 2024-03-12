@@ -3,7 +3,7 @@ import React from 'react';
 import AdminBlogs from '@/components/AdminBlogs';
 import { useAuth } from "@/store/dataStore";
 
-const page = () => {
+const Page = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useAuth((state) => [
     state.isLoggedIn,
@@ -17,4 +17,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

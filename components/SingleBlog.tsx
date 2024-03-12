@@ -49,7 +49,7 @@ const SingleBlog = () => {
           <div>
             <ul className="flex gap-2">
               {category.map((item) => (
-                <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
+                <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex" key={item}>
                   {item}
                 </li>
               ))}
