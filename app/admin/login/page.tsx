@@ -17,20 +17,19 @@ export default function LoginPage() {
     const formData = new FormData(event.currentTarget);
     const userName = formData.get("userName");
     const password = formData.get("password");
-
+    try {
     const response = await fetch("/api/admin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userName, password }),
     });
-
-    if (response.ok) {
-      setIsLoggedIn(true);
+    setIsLoggedIn(true);
       router.push("/admin/blogs");
-    } else {
-      alert("Username or password is wrong!!");
-    }
+  } catch (error) {
+    
+      alert("Username or password is wrong!!"+ error);
   }
+}
 
   return (
     <form onSubmit={handleSubmit}>

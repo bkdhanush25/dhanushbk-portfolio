@@ -6,6 +6,12 @@ import { useBlog } from "@/store/dataStore";
 import { DateTime } from 'luxon';
 
 const SingleBlog = () => {
+
+  const renderParagraphs = () => {
+    const paragraphs = blogContent.split('\n');
+    return paragraphs.map((paragraph, index) => <p key={index}>{paragraph}<br/></p>);
+  };
+
   const [
     blogTitle,
     blogContent,
@@ -96,7 +102,7 @@ const SingleBlog = () => {
           </div>
         </div>
         {/* Blog Content */}
-        <p className="text-lg mb-10">{blogContent}</p>
+        <p className="text-lg mb-10">{renderParagraphs()}</p>
       </div>
     </div>
   );

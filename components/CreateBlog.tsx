@@ -1,12 +1,18 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 
 const CreateBlog = () => {
 
-    const [blogTitle, setBlogTitle] = useState("");
+  const renderParagraphs = () => {
+    const paragraphs = blogContent.split('\n');
+    return paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>);
+  };
+
+  const [blogTitle, setBlogTitle] = useState("");
   const [blogBannerImage, setBlogBannerImage] = useState<string>("");
   const [blogContent, setBlogContent] = useState("");
-  const [blogCategories, setBlogCategories] = useState([]);
+  const [blogCategory, setBlogCategory] = useState("");
+  const [blogCategories, setBlogCategories] = useState<string[]>([]);
   const [blogAuthor, setBlogAuthor] = useState("");
 
   const imageToString = (file: any) => {
@@ -59,46 +65,60 @@ const CreateBlog = () => {
       setBlogContent("");
       setBlogAuthor("");
       setBlogBannerImage("");
-      alert("you're email has been added to the list!!!");
+      alert("Blog is added!!!");
       // Handle response as needed
     } catch (error) {
       console.error("Error:", error);
     }
-};
+  };
+
+  const addBlogCategory= (event) =>{
+    event.preventDefault();
+    setBlogCategories([...blogCategories,blogCategory]);
+    setBlogCategory("");
+  }
 
   return (
-    <div>       Blogs
-       <form>
-          <input
-            type="text"
-            placeholder="Enter your Blog title"
-            value={blogTitle}
-            onChange={(e) => setBlogTitle(e.target.value)}
-          />
-          <br />
-          <input type="file" onChange={handleBlogBannerImageChange} />
-          <br />
-          <input
-            type="text"
-            placeholder="Enter your Blog Content"
-            value={blogContent}
-            onChange={(e) => setBlogContent(e.target.value)}
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="Enter the author name"
-            value={blogAuthor}
-            onChange={(e) => setBlogAuthor(e.target.value)}
-          />
-          <button onClick={handleSubmit}>Submit</button>
-        </form>
-        {/* <input type="text" placeholder="Enter your comments"/> */}
+    <div>
+      {" "}
+      Blogs
+      <form>
+        <input
+          type="text"
+          placeholder="Enter your Blog title"
+          value={blogTitle}
+          onChange={(e) => setBlogTitle(e.target.value)}
+        />
+        <br />
+        <input type="file" onChange={handleBlogBannerImageChange} />
+        <br />
+        <textarea
+          placeholder="Enter your Blog Content"
+          value={blogContent}
+          onChange={(e) => setBlogContent(e.target.value)}
+        ></textarea>
+        <br />
+        <input
+          type="text"
+          placeholder="Enter the author name"
+          value={blogAuthor}
+          onChange={(e) => setBlogAuthor(e.target.value)}
+        />
+        <input type="text" placeholder="enter the category" value={blogCategory} onChange={(e) => setBlogCategory(e.target.value)} />
+        <button onClick={(e) => addBlogCategory(e)}>Add Category</button><br/>
+        {blogCategories}
+        <br/>
+        <button onClick={handleSubmit}>Submit</button>
+      </form>
+      <div>
+        {renderParagraphs()}
       </div>
-  )
-}
+      {/* <input type="text" placeholder="Enter your comments"/> */}
+    </div>
+  );
+};
 
-export default CreateBlog
+export default CreateBlog;
 
 // const CreateBlog = () => {
 //   const [blogTitle, setBlogTitle] = useState("");
@@ -198,4 +218,3 @@ export default CreateBlog
 // };
 
 // export default CreateBlog;
-
