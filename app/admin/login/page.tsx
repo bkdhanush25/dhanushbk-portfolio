@@ -2,6 +2,12 @@
 import react, { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/store/dataStore";
+// @ts-ignore
+import { sign } from 'jsonwebtoken';
+
+function signToken(payload: { username: string }) {
+  return sign(payload, process.env.JWT_SEC, { expiresIn: '1h' });
+}
 
 export default function LoginPage() {
   const router = useRouter();
@@ -15,8 +21,8 @@ export default function LoginPage() {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const userName = formData.get("userName");
-    const password = formData.get("password");
+    const userName = formData.get('userName')?.toString();
+    const password = formData.get('password')?.toString();
     try {
     const response = await fetch("/api/admin", {
       method: "POST",
@@ -24,6 +30,7 @@ export default function LoginPage() {
       body: JSON.stringify({ userName, password }),
     });
     setIsLoggedIn(true);
+    const token = signToken({ username: userName as string });
       router.push("/admin/blogs");
   } catch (error) {
     

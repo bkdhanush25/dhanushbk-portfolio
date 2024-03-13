@@ -1,7 +1,22 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
+// @ts-ignore
+import { verify } from 'jsonwebtoken';
+import { GetServerSideProps } from 'next';
 
-const CreateBlog = () => {
+interface CreateBlogProps {
+  loggedIn: boolean;
+}
+
+const CreateBlog = ({ loggedIn }: CreateBlogProps) => {
+  const router = useRouter();
+  useEffect(() => {
+    // Redirect to login page if not logged in
+    if (!loggedIn) {
+      router.push('/admin/login');
+    }
+  }, [loggedIn]);
 
   const renderParagraphs = () => {
     const paragraphs = blogContent.split('\n');
@@ -57,6 +72,7 @@ const CreateBlog = () => {
           blogTitle,
           blogBannerImage,
           blogContent,
+          category: blogCategory,
           blogAuthor,
         }),
       });
@@ -72,7 +88,7 @@ const CreateBlog = () => {
     }
   };
 
-  const addBlogCategory= (event) =>{
+  const addBlogCategory= (event:any) =>{
     event.preventDefault();
     setBlogCategories([...blogCategories,blogCategory]);
     setBlogCategory("");
@@ -80,42 +96,81 @@ const CreateBlog = () => {
 
   return (
     <div>
-      {" "}
-      Blogs
-      <form>
-        <input
-          type="text"
-          placeholder="Enter your Blog title"
-          value={blogTitle}
-          onChange={(e) => setBlogTitle(e.target.value)}
-        />
-        <br />
-        <input type="file" onChange={handleBlogBannerImageChange} />
-        <br />
-        <textarea
-          placeholder="Enter your Blog Content"
-          value={blogContent}
-          onChange={(e) => setBlogContent(e.target.value)}
-        ></textarea>
-        <br />
-        <input
-          type="text"
-          placeholder="Enter the author name"
-          value={blogAuthor}
-          onChange={(e) => setBlogAuthor(e.target.value)}
-        />
-        <input type="text" placeholder="enter the category" value={blogCategory} onChange={(e) => setBlogCategory(e.target.value)} />
-        <button onClick={(e) => addBlogCategory(e)}>Add Category</button><br/>
-        {blogCategories}
-        <br/>
-        <button onClick={handleSubmit}>Submit</button>
-      </form>
-      <div>
-        {renderParagraphs()}
-      </div>
-      {/* <input type="text" placeholder="Enter your comments"/> */}
+      {loggedIn ? (
+        <h1>Welcome to the Example Page!</h1>
+      ) : (
+        <h1>You are not logged in. Please log in first.</h1>
+      )}
     </div>
+    // <div>
+    //   {" "}
+    //   Blogs
+    //   <form>
+    //     <input
+    //       type="text"
+    //       placeholder="Enter your Blog title"
+    //       value={blogTitle}
+    //       onChange={(e) => setBlogTitle(e.target.value)}
+    //     />
+    //     <br />
+    //     <input type="file" onChange={handleBlogBannerImageChange} />
+    //     <br />
+    //     <textarea
+    //       placeholder="Enter your Blog Content"
+    //       value={blogContent}
+    //       onChange={(e) => setBlogContent(e.target.value)}
+    //     ></textarea>
+    //     <br />
+    //     <input
+    //       type="text"
+    //       placeholder="Enter the author name"
+    //       value={blogAuthor}
+    //       onChange={(e) => setBlogAuthor(e.target.value)}
+    //     /><br/>
+    //     <input type="text" placeholder="enter the category" value={blogCategory} onChange={(e) => setBlogCategory(e.target.value)} />
+    //     <button onClick={(e) => addBlogCategory(e)}>Add Category</button><br/>
+    //     {blogCategories}
+    //     <br/>
+    //     <button onClick={handleSubmit}>Submit</button>
+    //   </form>
+    //   <div>
+    //     {renderParagraphs()}
+    //   </div>
+    //   {/* <input type="text" placeholder="Enter your comments"/> */}
+    // </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps<CreateBlogProps> = async (context) => {
+  const { req } = context;
+
+  // Get JWT token from cookies or headers
+  const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
+
+  if (!token) {
+    return {
+      props: {
+        loggedIn: false,
+      },
+    };
+  }
+
+  try {
+    // Verify JWT token
+    verify(token, process.env.JWT_SECRET);
+
+    return {
+      props: {
+        loggedIn: true,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        loggedIn: false,
+      },
+    };
+  }
 };
 
 export default CreateBlog;

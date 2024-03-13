@@ -43,7 +43,6 @@ export async function POST(request: Request) {
         const token = jwt.sign({ adminId: user.id }, process.env.JWT_SEC, { expiresIn: "1h" });
         if(CryptoJS.AES.decrypt(user.password, process.env.JWT_SEC).toString(CryptoJS.enc.Utf8) === password){
             return NextResponse.json({ user, token });
-            console.log("Helo");
         }else{
             // setIsLoggedIn(true);
             return NextResponse.json({ error: "userName or passowrd is wrong" }, { status: 404 });
