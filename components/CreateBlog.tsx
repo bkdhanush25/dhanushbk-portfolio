@@ -4,65 +4,59 @@ import { useRouter } from 'next/navigation';
 // @ts-ignore
 import { verify } from 'jsonwebtoken';
 import { GetServerSideProps } from 'next';
-
+import axios from "axios";
 interface CreateBlogProps {
   loggedIn: boolean;
 }
 
 const CreateBlog = ({ loggedIn }: CreateBlogProps) => {
-  const router = useRouter();
-  useEffect(() => {
-    // Redirect to login page if not logged in
-    if (!loggedIn) {
-      router.push('/admin/login');
-    }
-  }, [loggedIn]);
+
+  // Route for LoginIn
+  // const router = useRouter();
+  // useEffect(() => {
+  //   // Redirect to login page if not logged in
+  //   if (!loggedIn) {
+  //     router.push('/admin/login');
+  //   }
+  // }, [loggedIn]);
 
   const renderParagraphs = () => {
     const paragraphs = blogContent.split('\n');
     return paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>);
   };
 
+  // UseState Inputs
   const [blogTitle, setBlogTitle] = useState("");
-  const [blogBannerImage, setBlogBannerImage] = useState<string>("");
+  const [blogBannerImage, setBlogBannerImage] = useState<File | String | null>(null);
   const [blogContent, setBlogContent] = useState("");
   const [blogCategory, setBlogCategory] = useState("");
   const [blogCategories, setBlogCategories] = useState<string[]>([]);
   const [blogAuthor, setBlogAuthor] = useState("");
 
-  const imageToString = (file: any) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
+  const uploadFile = async() => {
+    const data= new FormData();
+    if(blogBannerImage) {
+// @ts-ignore
+    data.append("file", blogBannerImage);
+    data.append("upload_preset",'dhanush-portfolio-blogs-preset');
+    try{
+      const cloudName =process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+      let api = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
 
-      reader.onload = () => {
-        const result = reader.result;
-        if (typeof result === "string") {
-          resolve(result);
-        } else {
-          reject(new Error("Failed to convert image to string"));
-        }
-      };
-
-      reader.onerror = reject;
-
-      reader.readAsDataURL(file);
-    });
-  };
-
-  const handleBlogBannerImageChange = async (event: any) => {
-    const file = event.target.files[0];
-    try {
-      const imageDataUrl: string = (await imageToString(file)) as string;
-      console.log(imageDataUrl);
-      setBlogBannerImage(imageDataUrl);
-    } catch (error) {
-      console.error("Error converting image to string:", error);
+      const res = await axios.post(api, data);
+      const {secure_url} = res.data;
+      console.log(secure_url);
+      return secure_url;
+    }catch(err){
+      console.log(err);
     }
-  };
+  }
+  }
 
   const handleSubmit = async (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     try {
+      const imgUrl = await uploadFile();
       const response = await fetch("/api/admin/blog", {
         method: "POST",
         headers: {
@@ -70,9 +64,9 @@ const CreateBlog = ({ loggedIn }: CreateBlogProps) => {
         },
         body: JSON.stringify({
           blogTitle,
-          blogBannerImage,
+          blogBannerImage: imgUrl,
           blogContent,
-          category: blogCategory,
+          category: blogCategories,
           blogAuthor,
         }),
       });
@@ -80,7 +74,7 @@ const CreateBlog = ({ loggedIn }: CreateBlogProps) => {
       setBlogTitle("");
       setBlogContent("");
       setBlogAuthor("");
-      setBlogBannerImage("");
+      setBlogBannerImage(null);
       alert("Blog is added!!!");
       // Handle response as needed
     } catch (error) {
@@ -95,52 +89,53 @@ const CreateBlog = ({ loggedIn }: CreateBlogProps) => {
   }
 
   return (
-    <div>
-      {loggedIn ? (
-        <h1>Welcome to the Example Page!</h1>
-      ) : (
-        <h1>You are not logged in. Please log in first.</h1>
-      )}
-    </div>
     // <div>
-    //   {" "}
-    //   Blogs
-    //   <form>
-    //     <input
-    //       type="text"
-    //       placeholder="Enter your Blog title"
-    //       value={blogTitle}
-    //       onChange={(e) => setBlogTitle(e.target.value)}
-    //     />
-    //     <br />
-    //     <input type="file" onChange={handleBlogBannerImageChange} />
-    //     <br />
-    //     <textarea
-    //       placeholder="Enter your Blog Content"
-    //       value={blogContent}
-    //       onChange={(e) => setBlogContent(e.target.value)}
-    //     ></textarea>
-    //     <br />
-    //     <input
-    //       type="text"
-    //       placeholder="Enter the author name"
-    //       value={blogAuthor}
-    //       onChange={(e) => setBlogAuthor(e.target.value)}
-    //     /><br/>
-    //     <input type="text" placeholder="enter the category" value={blogCategory} onChange={(e) => setBlogCategory(e.target.value)} />
-    //     <button onClick={(e) => addBlogCategory(e)}>Add Category</button><br/>
-    //     {blogCategories}
-    //     <br/>
-    //     <button onClick={handleSubmit}>Submit</button>
-    //   </form>
-    //   <div>
-    //     {renderParagraphs()}
-    //   </div>
-    //   {/* <input type="text" placeholder="Enter your comments"/> */}
+    //   {loggedIn ? (
+    //     <h1>Welcome to the Example Page!</h1>
+    //   ) : (
+    //     <h1>You are not logged in. Please log in first.</h1>
+    //   )}
     // </div>
+    <div>
+      {" "}
+      Blogs
+      <form>
+        <input
+          type="text"
+          placeholder="Enter your Blog title"
+          value={blogTitle}
+          onChange={(e) => setBlogTitle(e.target.value)}
+        />
+        <br />
+        <input type="file" onChange={(e)  => {e.target.files && setBlogBannerImage(e.target.files[0])}} />
+        <br />
+        <textarea
+          placeholder="Enter your Blog Content"
+          value={blogContent}
+          onChange={(e) => setBlogContent(e.target.value)}
+        ></textarea>
+        <br />
+        <input
+          type="text"
+          placeholder="Enter the author name"
+          value={blogAuthor}
+          onChange={(e) => setBlogAuthor(e.target.value)}
+        /><br/>
+        <input type="text" placeholder="enter the category" value={blogCategory} onChange={(e) => setBlogCategory(e.target.value)} />
+        <button onClick={(e) => addBlogCategory(e)}>Add Category</button><br/>
+        {blogCategories}
+        <br/>
+        <button onClick={handleSubmit}>Submit</button>
+      </form>
+      <div>
+        {renderParagraphs()}
+      </div>
+      {/* <input type="text" placeholder="Enter your comments"/> */}
+    </div>
   );
 };
 
+//Verification Login
 export const getServerSideProps: GetServerSideProps<CreateBlogProps> = async (context) => {
   const { req } = context;
 
