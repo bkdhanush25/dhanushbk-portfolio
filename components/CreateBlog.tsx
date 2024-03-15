@@ -9,7 +9,9 @@ interface CreateBlogProps {
   loggedIn: boolean;
 }
 
-const CreateBlog = ({ loggedIn }: CreateBlogProps) => {
+const CreateBlog = (
+  // { loggedIn }: CreateBlogProps
+  ) => {
 
   // Route for LoginIn
   // const router = useRouter();
