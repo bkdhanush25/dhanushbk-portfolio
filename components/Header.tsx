@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion as m } from "framer-motion";
+import { AnimatePresence, motion as m } from "framer-motion";
 import { useNavigation } from "@/store/dataStore";
 
 const svgVariants = {
@@ -78,8 +78,9 @@ const Header = () => {
             </m.svg>
           )}
         </div>
+        <AnimatePresence>
         {isOpenNav && (
-          <div className="absolute top-0 left-0 flex flex-col bg-black pt-7 text-center pb-5 px-5 rounded-b-md w-full text-white">
+          <m.div initial={{y:-100, opacity:0}} animate={{y:0, opacity:1}} exit={{y:-100, opacity:0}} transition={{type:"tween"}} className="absolute top-0 left-0 flex flex-col bg-black pt-7 text-center pb-5 px-5 rounded-b-md w-full text-white">
             <Link
               href="/"
               className={`p-2 ${selectNav === "Home"? "font-bold text-lg text-primary-color": ""}`}
@@ -103,8 +104,9 @@ const Header = () => {
           <Link href="/contact" onClick={() => { setSelectNav("Contact"); setisOpenNav(false);} } className={`p-2 ${selectNav === "Contact"? "font-bold text-lg text-primary-color": ""}`}>
             Contact
           </Link>
-          </div>
+          </m.div>
         )}
+        </AnimatePresence>
       </div>
       {/* Nabigation bar */}
       <div className="rounded-full bg-light-black sm:mx-2 lg:mx-[10%] hidden sm:flex  p-1 text-white mt-2 justify-between text-base items-center">
