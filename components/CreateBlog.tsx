@@ -130,7 +130,6 @@ const CreateBlog = (
         <button onClick={handleSubmit}>Submit</button>
       </form>
       <div>
-        {renderParagraphs()}
       </div>
       {/* <input type="text" placeholder="Enter your comments"/> */}
     </div>

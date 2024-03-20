@@ -15,6 +15,8 @@ export const useAuth = create<CreateAuth>((set) => ({
 export const useBlog = create<CreateBlog>((set) => ({
     blogTitle:"",
     setBlogTitle: (blogTitle) => set({ blogTitle }),
+    blogBannerImage:"",
+    setBlogBannerImage: (blogBannerImage) => set({ blogBannerImage }),
     blogContent:"",
     setBlogContent: (blogContent) => set({ blogContent }),
     category:[],

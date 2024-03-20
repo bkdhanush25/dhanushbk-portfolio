@@ -11,6 +11,8 @@ export interface CreateAuth{
 export interface CreateBlog{
     blogTitle: string,
     setBlogTitle: (blogTitle: string) => void;
+    blogBannerImage: string,
+    setBlogBannerImage: (blogBannerImage: string) => void;
     blogContent: string,
     setBlogContent: (blogContent: string) => void;
     category: string[],

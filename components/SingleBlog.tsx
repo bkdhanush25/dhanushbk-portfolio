@@ -14,6 +14,7 @@ const SingleBlog = () => {
 
   const [
     blogTitle,
+    blogBannerImage,
     blogContent,
     category,
     blogAuthor,
@@ -22,6 +23,7 @@ const SingleBlog = () => {
     createdAt,
   ] = useBlog((state) => [
     state.blogTitle,
+    state.blogBannerImage,
     state.blogContent,
     state.category,
     state.blogAuthor,
@@ -31,20 +33,20 @@ const SingleBlog = () => {
   ]);
 
   return (
-    <div className="mx-56">
+    <div className="mx-5 md:mx-20 lg:mx-40 xl:mx-56">
       {/* Banner Image */}
       <div className="w-full flex justify-center mt-20">
         <Image
-          src="https://img.freepik.com/premium-vector/trendy-event-banner-template_85212-590.jpg"
+          src={blogBannerImage}
           width={100}
           height={100}
           alt="blog-banner"
-          className="w-full h-[35vw] object-cover rounded-lg"
+          className="w-full  h-[50vw] md:h-[35vw] object-cover rounded-lg"
           unoptimized
         />
       </div>
       <div className="mt-10">
-        <h2 className="text-5xl font-bold underline">{blogTitle}</h2>
+        <h2 className="text-3xl md:text-5xl font-bold underline">{blogTitle}</h2>
         {/* Date, Categories, Likes and Comments */}
         <div className="flex flex-wrap md:text-base text-sm items-center gap-5 my-5">
           {/* Date of posted */}
@@ -102,7 +104,7 @@ const SingleBlog = () => {
           </div>
         </div>
         {/* Blog Content */}
-        <p className="text-lg mb-10">{renderParagraphs()}</p>
+        <p className="text-base md:text-lg mb-10">{renderParagraphs()}</p>
       </div>
     </div>
   );
