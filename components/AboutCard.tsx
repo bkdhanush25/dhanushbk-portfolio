@@ -25,7 +25,7 @@ const AboutCard = () => {
   return (
     <>
       {/* About Details */}
-      <div className="py-0 md:py-5 lg:py-10 px-3 md:px-5 xl:px-20">
+      <div className="pt-12 md:py-5 lg:py-10 px-3 md:px-5 xl:px-20">
         <div className="lg:grid grid-cols-2 gap-10 xl:gap-2">
           <div className="col-span-1 flex justify-center">
             <Image

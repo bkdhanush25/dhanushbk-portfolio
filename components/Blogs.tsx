@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-// @ts-ignore 
-import { DateTime } from 'luxon';
+// @ts-ignore
+import { DateTime } from "luxon";
 import { useBlog } from "@/store/dataStore";
 import { useRouter } from "next/navigation";
 
@@ -42,7 +42,16 @@ const Blogs = () => {
     fetchBlogs();
   }, []);
 
-  const [setBlogTitle, setBlogBannerImage, setBlogContent, setCategory, setBlogAuthor, setLikes, setComments, setCreatedAt] = useBlog((state) => [
+  const [
+    setBlogTitle,
+    setBlogBannerImage,
+    setBlogContent,
+    setCategory,
+    setBlogAuthor,
+    setLikes,
+    setComments,
+    setCreatedAt,
+  ] = useBlog((state) => [
     state.setBlogTitle,
     state.setBlogBannerImage,
     state.setBlogContent,
@@ -54,8 +63,8 @@ const Blogs = () => {
   ]);
 
   return (
-    <div className="text-center md:mx-20 mx-5 mt-5 mb-10">
-      <h1 className="text-5xl font-medium max-sm:text-3xl max-sm:text-left mb-10">
+    <div className="text-center md:mx-20 mx-2 mt-5 mb-10">
+      <h1 className="text-5xl font-bold md:font-medium max-sm:text-4xl max-sm:text-left mb-5 md:mb-10">
         My <span className="text-primary-color">Blogs</span>
       </h1>
       <ul className="flex flex-col lg:gap-5 gap-10">
@@ -66,26 +75,28 @@ const Blogs = () => {
           //   <p>{blog.blogContent}</p>
           //   <p>{blog.blogAuthor}</p>
           // </li>
-<li onClick={()=>{
-  setBlogTitle(blog.blogTitle)
-  setBlogBannerImage(blog.blogBannerImage);
-  console.log(blog.blogBannerImage);
-  // console.log(blogBannerImage);
-  setBlogContent(blog.blogContent)
-  setCategory(blog.category)
-  setBlogAuthor(blog.blogAuthor)
-  setLikes(blog.likes)
-  setComments(blog.comments)
-  setCreatedAt(blog.createdAt)
-  router.push(`/blogs/${blog.blogTitle}`);
-}} className="lg:flex justify-center gap-5 p-5 rounded-3xl group cursor-pointer hover:bg-zinc-100" key={blog.id}>
+          <li
+            onClick={() => {
+              setBlogTitle(blog.blogTitle);
+              setBlogBannerImage(blog.blogBannerImage);
+              setBlogContent(blog.blogContent);
+              setCategory(blog.category);
+              setBlogAuthor(blog.blogAuthor);
+              setLikes(blog.likes);
+              setComments(blog.comments);
+              setCreatedAt(blog.createdAt);
+              router.push(`/blogs/${blog.blogTitle}`);
+            }}
+            className="lg:flex justify-center gap-5 py-5 px-2 rounded-3xl group cursor-pointer bg-zinc-100 md:bg-white hover:bg-zinc-100"
+            key={blog.id}
+          >
             <div className="w-full mb-2 flex justify-center">
               <Image
                 width={100}
                 height={100}
                 src={blog.blogBannerImage}
                 alt="College-Image"
-                className="w-[500px] md:min-w-[400px] min-w-[300px] h-fit rounded-[26px]"
+                className="w-full md:w-[500px] md:min-w-[400px] min-w-[280px] h-fit rounded-md md:rounded-[26px]"
                 unoptimized
               />
             </div>
@@ -96,18 +107,25 @@ const Blogs = () => {
               <p className="text-zinc-500 lg:mb-5 md:mb-2">
                 - by {blog.blogAuthor}
               </p>
-              <p className="line-clamp-4 mb-5">{blog.blogContent}</p>
+              <p className="line-clamp-4 mb-5 mt-3 md:mt-0">{blog.blogContent}</p>
               {/* Date, Categories, Likes and Comments */}
               <div className="flex flex-wrap md:text-base text-sm justify-center items-center gap-5">
                 {/* Date of posted */}
                 <div>
-                  <p className="text-zinc-500 font-medium">{DateTime.fromISO(blog.createdAt).monthLong} {DateTime.fromISO(blog.createdAt).day}, {DateTime.fromISO(blog.createdAt).year}</p>
+                  <p className="text-zinc-500 font-medium">
+                    {DateTime.fromISO(blog.createdAt).monthLong}{" "}
+                    {DateTime.fromISO(blog.createdAt).day},{" "}
+                    {DateTime.fromISO(blog.createdAt).year}
+                  </p>
                 </div>
                 {/* Categories */}
                 <div>
                   <ul className="flex gap-2">
                     {blog.category.map((item) => (
-                      <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex" key={item}>
+                      <li
+                        className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex"
+                        key={item}
+                      >
                         {item}
                       </li>
                     ))}
@@ -155,6 +173,7 @@ const Blogs = () => {
               </div>
             </div>
           </li>
+          
         ))}
       </ul>
     </div>
