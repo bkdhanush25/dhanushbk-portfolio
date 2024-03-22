@@ -68,7 +68,7 @@ const Blogs = () => {
         My <span className="text-primary-color">Blogs</span>
       </h1>
       <ul className="flex flex-col lg:gap-5 gap-10">
-        {blogs.map((blog) => (
+        {blogs.map((blog: Blog) => (
           // <li key={blog.id} className="border inline-block">
           //   <h2>{blog.blogTitle}</h2>
           //   <Image src={blogBannerImage} alt="hello"/>
