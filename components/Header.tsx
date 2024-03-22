@@ -22,7 +22,7 @@ const Header = () => {
       {/* Mobile hamburger menu */}
       <div className="hidden max-sm:flex justify-end">
         <div
-          className={`inline-block text-white p-1 rounded-lg justify-self-end z-10 absolute top-2 right-2 ${
+          className={`inline-block text-white p-1 rounded-lg justify-self-end z-50 absolute top-2 right-2 ${
             isOpenNav ? "bg-light-black border-white border" : "bg-primary-color border-primary-color border"
           } `}
           onClick={() => setisOpenNav(!isOpenNav)}

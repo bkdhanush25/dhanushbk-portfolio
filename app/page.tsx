@@ -87,7 +87,7 @@ function Page() {
   return (
     <div>
       {/* Hello and intro section */}
-      <div className="relative py-[120px] max-sm:py-[90px] flex justify-center">
+      <div className="relative py-[120px] max-sm:py-[90px] flex justify-center z-[-10]">
         <AnimatePresence>
           {!hoverProfile1 && (
             <m.div
