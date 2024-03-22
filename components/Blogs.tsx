@@ -24,8 +24,11 @@ const Blogs = () => {
 
   const [blogs, setBlogs] = useState<Blog[]>([]);
 
+  const [isBlogLoading, setIsBlogLoading] = useState(false);
+
   useEffect(() => {
     async function fetchBlogs() {
+      setIsBlogLoading(true);
       try {
         const response = await fetch("/api/blog");
         if (response.ok) {
@@ -37,6 +40,7 @@ const Blogs = () => {
       } catch (error) {
         console.error("Error fetching blogs:", error);
       }
+      setIsBlogLoading(false);
     }
 
     fetchBlogs();
@@ -68,7 +72,7 @@ const Blogs = () => {
         My <span className="text-primary-color">Blogs</span>
       </h1>
       <ul className="flex flex-col lg:gap-5 gap-10">
-        {blogs.map((blog: Blog) => (
+        { !isBlogLoading && blogs?.map((blog: Blog) => (
           // <li key={blog.id} className="border inline-block">
           //   <h2>{blog.blogTitle}</h2>
           //   <Image src={blogBannerImage} alt="hello"/>
