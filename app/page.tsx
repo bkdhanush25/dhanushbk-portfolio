@@ -6,7 +6,7 @@ import Profile2 from "../public/profile2.png";
 import TransitionRing from "../public/transition-ring.png";
 import HalfCircle from "../public/primary-half-circle.png";
 import SpringTransition from "../public/spring-transition.png";
-import TestimonialProfile1 from "../public/testimonial-profile1.png";
+import TestimonialProfile1 from "../public/testimonial-profile1.jpg";
 import TestimonialProfile2 from "../public/testimonial-profile2.jpg";
 import TestimonialProfile3 from "../public/testimonial-profile3.jpg";
 import MyServices1 from "../public/myservices1.png";
@@ -119,7 +119,8 @@ function Page() {
               <h2 className="text-7xl max-sm:text-[42px] font-semibold mt-2 -z-20">
                 I&apos;m <span className="text-primary-color">Dhanush</span>,
                 <br />
-                Web Developer<span className="text-primary-color">.</span>
+                Full Stack Developer
+                <span className="text-primary-color">.</span>
               </h2>
             </m.div>
           )}
@@ -160,7 +161,7 @@ function Page() {
               </svg>
               <p className="text-xl max-sm:text-base font-medium max-sm:line-clamp-3 -z-20 max-sm:w-36">
                 Dhanush&apos;s Smart work <br className="max-sm:hidden" />
-                ensure our website&apos;s success{" "}
+                ensure our success{" "}
                 <br className="max-sm:hidden" />
                 Highly Recommended
               </p>
@@ -235,7 +236,7 @@ function Page() {
                 </svg>
               </div>
               <p className="text-5xl max-sm:text-2xl text-right font-bold">
-                3+ Years
+                1+ Years
               </p>
               <p className="text-xl max-sm:text-base font-medium ml-auto">
                 Experience
@@ -383,13 +384,13 @@ function Page() {
         {/* Heading My services section */}
         <div className="flex max-sm:flex-col justify-between items-center max-sm:gap-3">
           <h3 className="text-5xl font-medium max-sm:text-3xl max-sm:text-left">
-            My <span className="text-primary-color">Services</span>
+            Technical <span className="text-primary-color">Expertise</span>
           </h3>
           <p className="text-right max-sm:text-center">
-            From WordPress wonders to custom-coded brilliance, offering a
-            spectrum
-            <br className="max-sm:hidden" /> of web development services for a
-            digital experience like no other.
+            Built production-ready full-stack web applications using React,
+            Next.js,
+            <br className="max-sm:hidden" />
+            Node.js, Typsecript, Zustand, RestAPI and MongoDB.
           </p>
         </div>
         {/* Carasouel section */}
@@ -414,12 +415,12 @@ function Page() {
                 hoverService == 1 ? "bg-primary-color duration-200" : ""
               }`}
             >
-              Wordpress Dev
+              Frontend Dev
             </h4>
             <hr className="opacity-50 mb-12" />
             <div className="relative flex">
               <Image
-                className="pt-5 md:w-80 lg:w-full"
+                className="pt-5 md:w-80"
                 src={MyServices1}
                 width={400}
                 height={400}
@@ -476,12 +477,12 @@ function Page() {
                 hoverService == 2 ? "bg-primary-color duration-200" : ""
               }`}
             >
-              Full-Stack Web Dev
+              Full-Stack Dev
             </h4>
             <hr className="opacity-50 mb-12" />
             <div className="relative flex">
               <Image
-                className="pt-5 md:w-80 lg:w-full"
+                className="pt-5 md:w-80"
                 src={MyServices1}
                 width={400}
                 height={400}
@@ -538,12 +539,12 @@ function Page() {
                 hoverService == 3 ? "bg-primary-color duration-200" : ""
               }`}
             >
-              App Dev
+              Backend Dev
             </h4>
             <hr className="opacity-50 mb-12" />
             <div className="relative flex">
               <Image
-                className="pt-5 md:w-80 lg:w-full"
+                className="pt-5 md:w-80"
                 src={MyServices1}
                 width={400}
                 height={400}
@@ -593,17 +594,9 @@ function Page() {
         </h3>
         <div className="grid grid-cols-5 justify-center lg:mx-20 gap-0 lg:gap-0 mx-2 md:mx-10 justify-items-center">
           {/* Company's section */}
-          <div className="flex flex-col gap-20 text-right col-span-2">
+          <div className="flex flex-col gap-24 text-right col-span-2">
             <div>
               <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
-                Softrate India Pvt Limited
-              </h4>
-              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                May 2021 - Jun 2021
-              </p>
-            </div>
-            <div>
-              <h4 className="text-4xl max-sm:text-xl max-sm:mt-8 md:mt-16 lg:mt-0 text-light-black font-semibold">
                 Foyer Technology Pvt Limited
               </h4>
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
@@ -611,11 +604,19 @@ function Page() {
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
-                Travi Associate
+              <h4 className="text-4xl max-sm:text-xl max-sm:mt-8 md:mt-16 lg:mt-0 text-light-black font-semibold">
+                Softrate
               </h4>
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
-                Oct 2023 - Present
+                Sep 2023 - Apr 2024
+              </p>
+            </div>
+            <div>
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+                CubeSimple Pvt Limited
+              </h4>
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
+                Apr 2024 - Oct 2024
               </p>
             </div>
           </div>
@@ -626,7 +627,7 @@ function Page() {
                 <p className="invisible">.</p>
               </div>
             </div>
-            <div className="lg:h-28 md:h-60 h-48 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
+            <div className="lg:h-36 md:h-60 h-48 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
               <p className="invisible">.</p>
             </div>
             <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
@@ -634,7 +635,7 @@ function Page() {
                 <p className="invisible">.</p>
               </div>
             </div>
-            <div className="lg:h-28 md:h-48 h-40 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
+            <div className="lg:h-36 md:h-48 h-40 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
               <p className="invisible">.</p>
             </div>
             <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
@@ -647,20 +648,12 @@ function Page() {
           <div className="flex flex-col gap-8 col-span-2">
             <div>
               <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
-                Graphic Designer
+                React Developer Intern
               </h4>
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
-                Contributed to 15+ marketing campaigns by creating captivating
-                visual assets and collaborating with a dynamic design team.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
-                Front-end Web Developer
-              </h4>
-              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
-                proficient in building responsive user interfaces with ReactJS
-                and Material UI for 3 diverse web projects.
+                Built responsive UIs using ReactJS and Material UI across 3
+                projects, contributing to 2 production-ready apps. Resolved 35+
+                UI/UX issues and improved engagement by 20%.
               </p>
             </div>
             <div>
@@ -668,8 +661,19 @@ function Page() {
                 Full Stack Web Developer
               </h4>
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
-                Contributed to projects using the MERN stack and Next.js.
-                Leveraging Prisma for efficient database interactions.
+                Built responsive MERN & NextJS apps, optimizing front-end load
+                speed by 25% and backend query times by 20% using Prisma, NoSQL,
+                and Microservices.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+                React Developer
+              </h4>
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
+                Worked on React UI/UX development and ServiceNow ITOM,
+                automating tasks (30–50% effort saved) and leading a team to
+                reduce incidents by 25% through Agile workflow optimization.
               </p>
             </div>
           </div>
@@ -722,14 +726,14 @@ function Page() {
             Why <span className="text-primary-color">Hire me</span>?
           </h4>
           <p className="text-primary-gray text-xl max-sm:text-base">
-            As your dedicated freelancer, I bring a blend of trust, unwavering
-            quality,
-            <br className="max-sm:hidden" /> and seasoned experience to every
-            project. From full-stack marvels to the
-            <br className="max-sm:hidden" /> finesse of WordPress and Wix, rest
-            assured your vision is in capable hands,
-            <br className="max-sm:hidden" /> ready to transform into a digital
-            masterpiece.
+            Skilled Full-Stack Developer with AI expertise, building scalable
+            MERN & NextJS apps.
+            <br className="max-sm:hidden" /> Created impactful AI tools using
+            Groq LLaMA, LangChain, and deep learning frameworks.
+            <br className="max-sm:hidden" /> Led teams and optimized workflows,
+            improving performance and efficiency significantly.
+            <br className="max-sm:hidden" /> Quick learner with a passion for
+            solving real-world problems through tech innovation.
             {/* Lorem ipsum dolor sit amet, consectetur
             <br className="max-sm:hidden" /> adipiscing elit. Duis lacus nunc,
             posuere in justo
@@ -738,7 +742,7 @@ function Page() {
           <div className="flex justify-between max-sm:justify-around">
             <div className="flex flex-col gap-2.5 max-sm:gap-0">
               <h5 className="text-4xl max-sm:text-xl font-medium flex">
-                <CountUp start={0} end={5} duration={4} />+
+                <CountUp start={0} end={7} duration={4} />+
               </h5>
               <p className="text-gray-500 text-xl max-sm:text-base">
                 Project Completed
@@ -746,10 +750,10 @@ function Page() {
             </div>
             <div className="flex flex-col gap-2.5 max-sm:gap-0">
               <h5 className="text-4xl max-sm:text-xl font-medium flex">
-                <CountUp start={0} end={10} duration={4} />+
+                <CountUp start={0} end={3} duration={4} />+
               </h5>
               <p className="text-gray-500 text-xl max-sm:text-base">
-                Clients Engaged
+                Industries Served
               </p>
             </div>
           </div>
@@ -794,74 +798,79 @@ function Page() {
           itemClass="carousel-item-padding-40-px mb-10"
           className="mb-10 lg:pl-20 pl-2 py-12 max-sm:pt-6 max-sm:pb-0 relative"
         >
-          {/* Project 1 Bode mockup */}
-          <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-bode-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
-            onMouseOver={() => {
-              setHoverProjectCard(1);
-            }}
-            onMouseOut={() => {
-              setHoverProjectCard(0);
-            }}
+          {/* Project 1 NutrientAI mockup */}
+          <Link
+            href="https://smart-healthcare-assist.streamlit.app/"
+            target="_blank"
           >
             <div
-              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
-                hoverProjectCard == 1
-                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
-                  : "duration-200"
-              }`}
+              className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-nutrientai-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+              onMouseOver={() => {
+                setHoverProjectCard(1);
+              }}
+              onMouseOut={() => {
+                setHoverProjectCard(0);
+              }}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                #Project 1
-              </h5>
-              <AnimatePresence>
-                {hoverProjectCard == 1 && (
-                  <m.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100 }}
-                    transition={{
-                      duration: 0.2,
-                      transition: { duration: 0.1 },
-                    }}
-                  >
-                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Proudly unveiling a sleek gym website, blending style and
-                      functionality seamlessly, to enhance user experience and
-                      showcase the fitness center&apos;s offerings with flair.
-                      Our commitment to excellence shines through, creating a
-                      dynamic online space that truly represents the
-                      client&apos;s fitness vision
-                    </p>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <div
-              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
-                hoverProjectCard == 1
-                  ? "text-white bg-primary-color duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <svg
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="p-1"
+              <div
+                className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                  hoverProjectCard == 1
+                    ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                    : "duration-200"
+                }`}
               >
-                <path
-                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
-                  fill="currentColor"
-                />
-              </svg>
+                <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                  #Project 1
+                </h5>
+                <AnimatePresence>
+                  {hoverProjectCard == 1 && (
+                    <m.div
+                      initial={{ opacity: 0, y: 100 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 100 }}
+                      transition={{
+                        duration: 0.2,
+                        transition: { duration: 0.1 },
+                      }}
+                    >
+                      <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
+                        Streamlit-based web application designed to estimate the
+                        nutritional content of Indian dishes. It employs Groq's
+                        LLaMA-3 model for extracting ingredients and their
+                        quantities from user inputs. The application utilizes
+                        ChromaDB for vector similarity searches to retrieve
+                        nutritional information.
+                      </p>
+                    </m.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              <div
+                className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                  hoverProjectCard == 1
+                    ? "text-white bg-primary-color duration-200"
+                    : "duration-200"
+                }`}
+              >
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="p-1"
+                >
+                  <path
+                    d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
             </div>
-          </div>
-          {/* Project 2 Recomflix mockup */}
+          </Link>
+          {/* Project 2 Bode mockup */}
           <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-recomflix-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-bode-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(2);
             }}
@@ -891,11 +900,12 @@ function Page() {
                     }}
                   >
                     <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Excited to unveil my client&apos;s frontend movie website,
-                      blending creativity and functionality seamlessly. From
-                      captivating UI to seamless navigation, it&apos;s now an
-                      engaging platform for movie enthusiasts, bringing my
-                      client&apos;s vision to life!
+                      Proudly unveiling a sleek gym website, blending style and
+                      functionality seamlessly, to enhance user experience and
+                      showcase the fitness center&apos;s offerings with flair.
+                      Our commitment to excellence shines through, creating a
+                      dynamic online space that truly represents the
+                      client&apos;s fitness vision
                     </p>
                   </m.div>
                 )}
@@ -923,9 +933,9 @@ function Page() {
               </svg>
             </div>
           </div>
-          {/* Project 3 Freakmillionaire mockup */}
+          {/* Project 3 Recomflix mockup */}
           <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-freakmillionaire-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-recomflix-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(3);
             }}
@@ -955,11 +965,11 @@ function Page() {
                     }}
                   >
                     <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Presenting my client&apos;s blog haven, where sleek design
-                      meets seamless functionality, creating an engaging space
-                      for sharing ideas. Thrilled to have transformed their
-                      vision into a visually captivating and user-friendly
-                      online experience!
+                      Excited to unveil my client&apos;s frontend movie website,
+                      blending creativity and functionality seamlessly. From
+                      captivating UI to seamless navigation, it&apos;s now an
+                      engaging platform for movie enthusiasts, bringing my
+                      client&apos;s vision to life!
                     </p>
                   </m.div>
                 )}
@@ -987,75 +997,77 @@ function Page() {
               </svg>
             </div>
           </div>
-          {/* Project 3 nwglobal mockup */}
-          <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-nwmglobal-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
-            onMouseOver={() => {
-              setHoverProjectCard(4);
-            }}
-            onMouseOut={() => {
-              setHoverProjectCard(0);
-            }}
-          >
+          {/* Project 4 Portfolio mockup */}
+          <Link href="https://dhanushbk-portfolio.vercel.app/" target="_blank">
             <div
-              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
-                hoverProjectCard == 4
-                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
-                  : "duration-200"
-              }`}
+              className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-portfolio-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+              onMouseOver={() => {
+                setHoverProjectCard(4);
+              }}
+              onMouseOut={() => {
+                setHoverProjectCard(0);
+              }}
             >
-              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
-                #Project 4
-              </h5>
-              <AnimatePresence>
-                {hoverProjectCard == 4 && (
-                  <m.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100 }}
-                    transition={{
-                      duration: 0.2,
-                      transition: { duration: 0.1 },
-                    }}
-                  >
-                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
-                      Proud to share the successful completion of our latest
-                      project—a client&apos;s webinar website that seamlessly
-                      blends functionality and aesthetic appeal. From
-                      user-friendly interfaces to robust backend systems, the
-                      result is a dynamic platform that elevates the
-                      client&apos;s webinar experience. Thrilled to have played
-                      a part in bringing their vision to life!
-                    </p>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <div
-              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
-                hoverProjectCard == 4
-                  ? "text-white bg-primary-color duration-200"
-                  : "duration-200"
-              }`}
-            >
-              <svg
-                width="34"
-                height="34"
-                viewBox="0 0 34 34"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="p-1"
+              <div
+                className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                  hoverProjectCard == 4
+                    ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                    : "duration-200"
+                }`}
               >
-                <path
-                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
-                  fill="currentColor"
-                />
-              </svg>
+                <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                  #Project 4
+                </h5>
+                <AnimatePresence>
+                  {hoverProjectCard == 4 && (
+                    <m.div
+                      initial={{ opacity: 0, y: 100 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 100 }}
+                      transition={{
+                        duration: 0.2,
+                        transition: { duration: 0.1 },
+                      }}
+                    >
+                      <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
+                        Full-stack portfolio site built with Next.js 13 (App
+                        Router), TypeScript, and Tailwind CSS. It uses Prisma
+                        connected to MongoDB for fetching blog data and storing
+                        contact form submissions. The app follows a modular
+                        structure with clean separation of concerns. Deployed on
+                        Vercel, it's optimized for performance, scalability, and
+                        real-time interaction.
+                      </p>
+                    </m.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              <div
+                className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                  hoverProjectCard == 4
+                    ? "text-white bg-primary-color duration-200"
+                    : "duration-200"
+                }`}
+              >
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="p-1"
+                >
+                  <path
+                    d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
             </div>
-          </div>
-          {/* Project 5 Prime industry mockup */}
+          </Link>
+          {/* Project 5 Freakmillionaire mockup */}
           <div
-            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-primeindustry-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-freakmillionaire-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
             onMouseOver={() => {
               setHoverProjectCard(5);
             }}
@@ -1085,6 +1097,136 @@ function Page() {
                     }}
                   >
                     <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
+                      Presenting my client&apos;s blog haven, where sleek design
+                      meets seamless functionality, creating an engaging space
+                      for sharing ideas. Thrilled to have transformed their
+                      vision into a visually captivating and user-friendly
+                      online experience!
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+            <div
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 5
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+          {/* Project 6 Cold Email AI mockup */}
+          <div
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-coldemailai-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(6);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 6
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                #Project 6
+              </h5>
+              <AnimatePresence>
+                {hoverProjectCard == 6 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
+                      AI-powered app generates personalized cold emails for job
+                      applications using Python, Streamlit, and the Groq
+                      LLaMA-3.3-70B-Versatile model. It extracts job details
+                      from URLs and aligns them with resume data for tailored
+                      output. ChromaDB is used for vector storage and retrieval.
+                      The code is modular with clear separation across resume
+                      parsing, LLM chaining, and utility functions.
+                    </p>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+            <div
+              className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
+                hoverProjectCard == 6
+                  ? "text-white bg-primary-color duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="p-1"
+              >
+                <path
+                  d="M5.66667 15.5833C4.88426 15.5833 4.25 16.2176 4.25 17C4.25 17.7824 4.88426 18.4167 5.66667 18.4167L25.6215 18.4167L18.8316 25.2066C18.2784 25.7598 18.2784 26.6568 18.8316 27.2101C19.3848 27.7633 20.2818 27.7633 20.8351 27.2101L29.0417 19.0035C30.1481 17.897 30.1482 16.103 29.0417 14.9965L20.8351 6.78993C20.2818 6.23669 19.3848 6.23669 18.8316 6.78993C18.2784 7.34318 18.2784 8.24016 18.8316 8.7934L25.6215 15.5833L5.66667 15.5833Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+          {/* Project 7 Prime industry mockup */}
+          <div
+            className="relative lg:h-[300px] lg:w-[600px] w-[350px] h-[200px] bg-primeindustry-mockup rounded-[20px] bg-contain bg-no-repeat bg-center vertical-boxshadow cursor-pointer"
+            onMouseOver={() => {
+              setHoverProjectCard(7);
+            }}
+            onMouseOut={() => {
+              setHoverProjectCard(0);
+            }}
+          >
+            <div
+              className={`absolute bottom-0 left-0 w-[96%] m-3  ${
+                hoverProjectCard == 7
+                  ? "p-3 bg-black bg-opacity-30 rounded-2xl backdrop-blur-[25px] duration-200"
+                  : "duration-200"
+              }`}
+            >
+              <h5 className="text-5xl max-sm:text-2xl text-stone-50 font-bold mb-2 max-sm:mb-0">
+                #Project 7
+              </h5>
+              <AnimatePresence>
+                {hoverProjectCard == 7 && (
+                  <m.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    transition={{
+                      duration: 0.2,
+                      transition: { duration: 0.1 },
+                    }}
+                  >
+                    <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                       Introducing my client&apos;s cutting-edge power plant
                       industry website, a fusion of innovation and precision in
                       a visually stunning interface. Seamlessly blending robust
@@ -1098,7 +1240,7 @@ function Page() {
             </div>
             <div
               className={`absolute top-2 right-2 border-2 border-primary-color p-1 rounded-full text-primary-color ${
-                hoverProjectCard == 5
+                hoverProjectCard == 7
                   ? "text-white bg-primary-color duration-200"
                   : "duration-200"
               }`}
@@ -1129,12 +1271,14 @@ function Page() {
             Speak to <span className="text-primary-color">My Results</span>
           </h3>
           <p className="text-xl font-medium text-white">
-            Incredible experience working with you - their expertise,
-            dedication,
-            <br className="max-sm:hidden" /> and attention to detail exceeded
-            our expectations. Trustworthy and
-            <br className="max-sm:hidden" /> professional, they truly
-            transformed our vision into a digital reality.
+            Testimonials that emphasize the measurable impact and success of my
+            projects,
+            <br className="max-sm:hidden" />
+            underscoring my ability to deliver results-driven solutions. These
+            endorsements reflect my
+            <br className="max-sm:hidden" />
+            technical expertise and consistent track record of achieving
+            business goals.
           </p>
         </div>
         {/* Carousel section */}
@@ -1172,8 +1316,8 @@ function Page() {
                       />
                     </div>
                     <div className="">
-                      <p className="text-2xl font-bold">Prakash</p>
-                      <p className="text-lg">Agency Owner</p>
+                      <p className="text-2xl font-bold">Sreedevi</p>
+                      <p className="text-lg">HOD, SSIT</p>
                     </div>
                   </div>
                   <div className="flex gap-1">
@@ -1265,11 +1409,11 @@ function Page() {
                 </svg>
               </div>
               <p className="text-xl">
-                Absolutely blown away by the web development services provided!
-                The transformation of our ideas into a visually stunning and
-                functional website exceeded all expectations. This
-                freelancer&apos;s dedication and creativity truly set a new
-                standard.
+                Consistently demonstrated exceptional skill in full-stack
+                development and technical innovation. Performance in hackathons
+                was outstanding, reflecting both depth and drive. A proactive
+                leader with a strong sense of responsibility and creative
+                problem-solving ability.
               </p>
             </div>
             <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
@@ -1287,8 +1431,8 @@ function Page() {
                       />
                     </div>
                     <div className="">
-                      <p className="text-2xl font-bold">Jayesh Patil</p>
-                      <p className="text-lg">CEO, Lirante</p>
+                      <p className="text-2xl font-bold">Balaji Rajendran</p>
+                      <p className="text-lg">CEO, Softrate</p>
                     </div>
                   </div>
                   <div className="flex gap-1">
@@ -1380,11 +1524,11 @@ function Page() {
                 </svg>
               </div>
               <p className="text-xl">
-                A big thank you to the freelancer who brought our vision to life
-                through impeccable web development. The seamless blend of
-                functionality and aesthetics reflects not just technical
-                expertise but a deep understanding of our brand. Couldn&apos;t
-                be happier with the result!
+                Delivered exceptional results in building responsive web
+                interfaces with MERN and Next.js. Demonstrated strong technical
+                expertise by improving performance and contributing to server
+                and database efficiency, significantly enhancing overall product
+                quality.
               </p>
             </div>
             <div className="p-5 mr-10 bg-white bg-opacity-20 backdrop-blur-md rounded-3xl">
@@ -1402,8 +1546,8 @@ function Page() {
                       />
                     </div>
                     <div className="">
-                      <p className="text-2xl font-bold">Santhakumar</p>
-                      <p className="text-lg">Founder, Industry</p>
+                      <p className="text-2xl font-bold">Kiran</p>
+                      <p className="text-lg">Colleague, CubeSimple</p>
                     </div>
                   </div>
                   <div className="flex gap-1">
@@ -1495,11 +1639,11 @@ function Page() {
                 </svg>
               </div>
               <p className="text-xl">
-                Grateful for the incredible web development work delivered by
-                this freelancer. The website they crafted is more than just
-                code; it&apos;s a testament to their commitment, skill, and the
-                ability to infuse emotion into every element. Highly
-                recommended!!
+                Consistently displayed leadership, timely execution, and a
+                strong collaborative spirit. Improved website interface and
+                usability, then led automation in ITOM with JavaScript, reducing
+                manual effort and incidents while enhancing overall team
+                efficiency.
               </p>
             </div>
           </Carousel>
@@ -1530,12 +1674,12 @@ function Page() {
               href="https://www.mailto:dhanushbk.freelancer@gmail.com"
               target="_blank"
             > */}
-              <button
-                 onClick={handleSubmit}
-                className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color"
-              >
-                Send
-              </button>
+            <button
+              onClick={handleSubmit}
+              className="absolute top-1 right-2 max-sm:top-1.5 max-sm:right-1 text-white text-xl max-sm:text-base px-10 max-sm:px-5 py-3 max-sm:py-2 bg-primary-color rounded-[60px] hover:text-primary-color hover:bg-white border-2 border-white duration-200 hover:border-primary-color"
+            >
+              Send
+            </button>
             {/* </Link> */}
             <input
               type="text"

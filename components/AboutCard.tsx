@@ -46,14 +46,17 @@ const AboutCard = () => {
               <span className="text-xl font-medium mb-5">
                 Hai all, Myself BK Dhanush
               </span>
-              <br /> I am the person who is passionate in Computer Science Field
-              and Entrepreneurship. I am Full Stack Web developer, who develops
-              website for people. I am Curious in learning Global trends like
-              4.O technologies. Passionate on Startup and having hungry mindset
-              to take Entrepreneurship in future. I am the person who is aware
-              and curious about emerging technologies. I am self-motivated
-              person who loves to inspire people and motivates through the quote
-              ,&quot;STAY HUNGRY, STAY FOOLISH&quot; .
+              <br /> Full-Stack Developer specializing in MERN
+              stack and Next.js, with strong expertise in building responsive,
+              high-performance web applications. He has hands-on experience
+              optimizing frontend performance with lazy loading, code splitting,
+              and scalable backend design using MongoDB, Express, and Prisma.
+              Dhanush has led UI/UX improvements, enhanced server efficiency,
+              and contributed to production-ready platforms across multiple
+              domains. He also explores AI on the side, having built tools
+              integrating LLMs for real-time data processing. His skill set
+              spans JavaScript, TypeScript, React, TailwindCSS, and modern
+              development practices. ,&quot;STAY HUNGRY, STAY FOOLISH&quot; .
             </p>
             <div>
               <div className="flex mt-5 items-end">
@@ -124,7 +127,7 @@ const AboutCard = () => {
                   Degree<span className="text-black">:</span>
                 </h5>
                 <p className="text-lg">
-                  Bachelor of Engineering in Computer Science
+                  Bachelor of Engineering in Computer Science, SSIT
                 </p>
               </div>
             </div>
@@ -506,7 +509,7 @@ const AboutCard = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AboutCard
+export default AboutCard;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Projects from '@/components/Projects'
 
 export const metadata ={
   title: 'Projects'
@@ -6,7 +7,9 @@ export const metadata ={
 
 function page() {
   return (
-    <div>Projects</div>
+    <>
+    <Projects/>
+    </>
   )
 }
 

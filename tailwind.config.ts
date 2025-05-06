@@ -19,6 +19,9 @@ const config: Config = {
           'freakmillionaire-mockup': "url('/freakmillionaire-mockup.png')",
           'nwmglobal-mockup': "url('/nwmglobal-mockup.png')",
           'primeindustry-mockup': "url('/primeindustry-mockup.png')",
+          'coldemailai-mockup': "url('/coldemailai-mockup.png')",
+          'portfolio-mockup': "url('/portfolio-mockup.png')",
+          'nutrientai-mockup': "url('/nutrientai-mockup.png')",
           'black-primary-bg': "url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D')"
       },
       colors:{
