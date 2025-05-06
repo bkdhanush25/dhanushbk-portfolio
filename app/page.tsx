@@ -835,7 +835,7 @@ function Page() {
                     >
                       <p className="text-orange-100 text-base max-sm:text-sm max-sm:line-clamp-3">
                         Streamlit-based web application designed to estimate the
-                        nutritional content of Indian dishes. It employs Groq's
+                        nutritional content of Indian dishes. It employs Groq&apos;s
                         LLaMA-3 model for extracting ingredients and their
                         quantities from user inputs. The application utilizes
                         ChromaDB for vector similarity searches to retrieve
@@ -1035,7 +1035,7 @@ function Page() {
                         connected to MongoDB for fetching blog data and storing
                         contact form submissions. The app follows a modular
                         structure with clean separation of concerns. Deployed on
-                        Vercel, it's optimized for performance, scalability, and
+                        Vercel, it&apos;s optimized for performance, scalability, and
                         real-time interaction.
                       </p>
                     </m.div>

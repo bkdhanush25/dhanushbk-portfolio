@@ -32,7 +32,7 @@ const Projects = () => {
               </h2>
               <p className="mb-5 mt-3 md:mt-0">
                 AI-driven Streamlit-based web tool designed to estimate the
-                nutritional content of Indian dishes. It leverages Groq's
+                nutritional content of Indian dishes. It leverages Groq&apos;s
                 LLaMA-3 large language model to extract ingredients and their
                 quantities from user-inputted dish names. The extracted data is
                 matched against a vector database (ChromaDB) that stores
@@ -52,7 +52,7 @@ const Projects = () => {
                       Python
                     </li>
                     <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
-                      Groq's LLaMA-3 Model
+                      Groq&apos;s LLaMA-3 Model
                     </li>
                     <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                       LangChain
@@ -90,7 +90,7 @@ const Projects = () => {
                 portfolio web application is built using Next.js, Tailwind CSS,
                 and Prisma with MongoDB for dynamic content management. It
                 features an integrated admin dashboard for easy management of
-                the portfolio's content and blogs. Blogs are directly fetched
+                the portfolio&apos;s content and blogs. Blogs are directly fetched
                 from the MongoDB database, providing flexibility for real-time
                 updates. Prisma ORM is used to interact with MongoDB, ensuring
                 efficient data querying and management. Zustand manages the
@@ -150,7 +150,7 @@ const Projects = () => {
               <p className="mb-5 mt-3 md:mt-0">
                 This web application uses Streamlit to provide an interactive
                 interface for generating personalized cold emails for job
-                applications. It leverages Groq's LLaMA-3.3-70B Versatile model
+                applications. It leverages Groq&apos;s LLaMA-3.3-70B Versatile model
                 to extract key details from user-provided resumes and job
                 descriptions, automatically generating tailored emails. The tool
                 also integrates PyMuPDF for extracting text from PDF resumes and
