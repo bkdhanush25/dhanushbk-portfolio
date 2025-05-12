@@ -604,7 +604,7 @@ function Page() {
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-xl max-sm:mt-8 md:mt-16 lg:mt-0 text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-xl max-sm:mt-2 md:mt-16 lg:mt-16 xl:mt-28 text-light-black font-semibold">
                 Softrate
               </h4>
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
@@ -612,7 +612,7 @@ function Page() {
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold max-sm:mt-4 md:mt-28 lg:mt-20">
                 CubeSimple Pvt Limited
               </h4>
               <p className="text-primary-gray text-xl mt-3.5 max-sm:text-base max-sm:mt-1">
@@ -627,7 +627,7 @@ function Page() {
                 <p className="invisible">.</p>
               </div>
             </div>
-            <div className="lg:h-36 md:h-60 h-48 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
+            <div className="lg:h-60 md:h-72 h-48 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
               <p className="invisible">.</p>
             </div>
             <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
@@ -635,7 +635,7 @@ function Page() {
                 <p className="invisible">.</p>
               </div>
             </div>
-            <div className="lg:h-36 md:h-48 h-40 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
+            <div className="lg:h-52 md:h-72 h-48 w-0 mx-auto border-r-[3px] border-dashed border-light-black">
               <p className="invisible">.</p>
             </div>
             <div className="rounded-full p-1.5 max-sm:p-1 border-2 border-light-black border-dashed">
@@ -650,27 +650,27 @@ function Page() {
               <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
                 React Developer Intern
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1 max-sm:line-clamp-5">
                 Built responsive UIs using ReactJS and Material UI across 3
                 projects, contributing to 2 production-ready apps. Resolved 35+
                 UI/UX issues and improved engagement by 20%.
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold xl:mt-24">
                 Full Stack Web Developer
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1 max-sm:line-clamp-4">
                 Built responsive MERN & NextJS apps, optimizing front-end load
                 speed by 25% and backend query times by 20% using Prisma, NoSQL,
                 and Microservices.
               </p>
             </div>
             <div>
-              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold">
+              <h4 className="text-4xl max-sm:text-xl text-light-black font-semibold xl:mt-20">
                 React Developer
               </h4>
-              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1">
+              <p className="text-primary-gray text-xl mt-3.5 max-sm:text-sm max-sm:mt-1 max-sm:line-clamp-4">
                 Worked on React UI/UX development and ServiceNow ITOM,
                 automating tasks (30–50% effort saved) and leading a team to
                 reduce incidents by 25% through Agile workflow optimization.

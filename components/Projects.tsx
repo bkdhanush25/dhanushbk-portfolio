@@ -47,7 +47,7 @@ const Projects = () => {
               <div className="flex flex-wrap md:text-base text-sm justify-start items-center gap-5">
                 {/* Categories */}
                 <div>
-                  <ul className="flex gap-2">
+                  <ul className="flex flex-wrap gap-2">
                     <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                       Python
                     </li>
@@ -102,7 +102,7 @@ const Projects = () => {
               <div className="flex flex-wrap md:text-base text-sm justify-start items-center gap-5">
                 {/* Categories */}
                 <div>
-                  <ul className="flex gap-2">
+                  <ul className="flex flex-wrap gap-2">
                     <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                       Next.js
                     </li>
@@ -224,7 +224,7 @@ const Projects = () => {
               <div className="flex flex-wrap md:text-base text-sm justify-start items-center gap-5">
                 {/* Categories */}
                 <div>
-                  <ul className="flex gap-2">
+                  <ul className="flex flex-wrap gap-2">
                     <li className="bg-zinc-200 rounded-full px-3 py-1 text-center items-center flex">
                     EJS 
                     </li>
